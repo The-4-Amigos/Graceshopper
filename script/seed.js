@@ -1,6 +1,28 @@
 'use strict'
 
-const {db, models: {User} } = require('../server/db')
+const {db, models: {User, Product} } = require('../server/db')
+
+//dummy data array for Product model
+
+const products = [{
+  name: 'Tila Tequila',
+  price: 76.99,
+}, {
+  name: 'Rose Rum',
+  alcoholType: 'rum',
+  price: 89.99,
+  description: 'It’s not fun without rum.'
+}, {
+  name: 'Walter Whiskey',
+  alcoholType: 'whiskey',
+  price: 68.99,
+  description: 'Too much of anything is bad, but too much good whiskey is barely enough.'
+}, {
+  name: 'Willow Wine',
+  alcoholType: 'wine',
+  price: 87.99,
+  description: 'Age is just a number. It’s totally irrelevant unless, of course, you happen to be a bottle of wine'
+}];
 
 /**
  * seed - this function clears the database, updates tables to
@@ -15,6 +37,10 @@ async function seed() {
     User.create({ username: 'cody', password: '123' }),
     User.create({ username: 'murphy', password: '123' }),
   ])
+
+  await Promise.all(products.map(product => {
+    return Product.create(product)
+  }))
 
   console.log(`seeded ${users.length} users`)
   console.log(`seeded successfully`)
