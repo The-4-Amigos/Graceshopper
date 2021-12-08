@@ -17,15 +17,18 @@ module.exports = db.define('product', {
     ABV: {
         type: Sequelize.DECIMAL,
     },
+    // o: should prevent less than 0 inputs
     stockAmount: {
         type: Sequelize.INTEGER,
         allowNull: false
     },
+    // o: should prevent less than 0 inputs
     price: {
         type: Sequelize.DECIMAL,
         allowNull: false,
         defaultValue: 0
     },
+    // o: can typically be a string
     description: {
         type: Sequelize.TEXT,
         defaultValue: 'If life gives you lemons, Add a bottle of your favorite alcohol'
