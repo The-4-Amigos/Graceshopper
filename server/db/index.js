@@ -12,7 +12,6 @@ Order.belongsToMany(Product, { through: 'ProductOrder' });
 Product.belongsToMany(Order, { through: 'ProductOrder' });
 
 //This user is specficaly an admin..
-//..
 User.hasMany(Product);
 Product.belongsTo(User);
 
