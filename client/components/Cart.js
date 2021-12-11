@@ -1,6 +1,6 @@
-import React, { Component } from "react";
-import { connect } from "react-redux";
-import { fetchProductsInCart, deleteProduct } from "../store/CheckoutStore";
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { fetchProductsInCart, deleteProduct } from '../store/CheckoutStore';
 
 export class Checkout extends Component {
   // constructor(){
@@ -19,12 +19,15 @@ export class Checkout extends Component {
   }
 
   render() {
-    console.log('this is pops products inside the cart.js comp',this.props.products);
+    console.log(
+      'this is pops products inside the cart.js comp',
+      this.props.products
+    );
     const products = this.props.products;
     console.log();
     return (
       <div>
-       <div>
+        <div>
           {products.map((product) => (
             <div key={product.id}>
               <div>{product.name}</div>

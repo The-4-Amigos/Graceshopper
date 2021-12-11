@@ -1,9 +1,8 @@
-
 import React, { Component, Fragment } from 'react';
 import { connect } from 'react-redux';
 import { withRouter, Route, Switch, Redirect } from 'react-router-dom';
 import AllProducts from './components/AllProducts';
-import Checkout from "./components/Cart";
+import Checkout from './components/Cart';
 import { Login, Signup } from './components/AuthForm';
 import Home from './components/Home';
 import SingleProduct from './components/SingleProduct';
@@ -30,6 +29,7 @@ class Routes extends Component {
             <Switch>
               <Route path="/home" component={Home} />
               {/* <Redirect to="/home" /> */}
+              {/* isAdmin will have to be a forumula */}
             </Switch>
           ) : (
             <Switch>
@@ -41,7 +41,7 @@ class Routes extends Component {
         </div>
         <div>
           <Switch>
-
+            <Route path="/" exact component={AllProducts} />
             <Route exact path="/products" component={AllProducts} />
 
             <Route exact path="/cart" component={Checkout} />
@@ -64,6 +64,10 @@ const mapState = (state) => {
     // Being 'logged in' for our purposes will be defined has having a state.auth that has a truthy id.
     // Otherwise, state.auth will be an empty object, and state.auth.id will be falsey
     isLoggedIn: !!state.auth.id,
+    //no.state.auth.admin
+    //bring rom state
+    // show extra start from the nav bar
+    //will chnage to routes and navbar
   };
 };
 
