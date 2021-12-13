@@ -1,3 +1,4 @@
+// o: delete this file if not being used
 const router = require("express").Router();
 const {
   models: { Product },

@@ -17,6 +17,7 @@ class Cart extends React.Component {
 
 	handleClick(evt, product) {
 		evt.preventDefault();
+		// o: event is not defined but evt is
 		let newQuantity = parseInt(event.target.quantity.value);
 		event.target.quantity.value = '';
 

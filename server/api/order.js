@@ -4,6 +4,7 @@ const Product = require('../db/models/Product');
 const ProductOrders = require('../db/models/ProductOrders');
 
 router.get('/', (req, res, next) => {
+	// o: this should be changed to an async / await for consistency
 	Orders.findAll()
 		.then((orders) => res.status(200).json(orders))
 		.catch(next);
@@ -12,6 +13,7 @@ router.get('/', (req, res, next) => {
 router.get('/:id', async (req, res, next) => {
 	try {
 
+		// o: can be a Order.findOne since you are only getting one thing
 		const userOrder = await Orders.findAll({
 			where: {
 				userId: req.params.id,
@@ -27,6 +29,7 @@ router.get('/:id', async (req, res, next) => {
 
 router.get('/byorder/:orderId', async (req, res, next) => {
 	try {
+		// o: don't forget to check for when the order with id of orderId is not found
 		const orderById = await Orders.findOne({
 			where: {
 				id: req.params.orderId,

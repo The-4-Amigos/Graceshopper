@@ -21,6 +21,7 @@ router.get("/", async (req, res, next) => {
 //get a single product:
 router.get("/:productId", async (req, res, next) => {
   try {
+    // o: check for when product is not found
     const product = await Product.findByPk(req.params.productId, {
       //include: { Cart, Order },
       //Getting an error stating that Cart & Order are not defined

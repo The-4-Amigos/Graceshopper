@@ -42,6 +42,9 @@ class Profile extends React.Component {
 								</button>
 							</Link>
 							<h2>Order History</h2>
+							{/* o: look into optional chaining 
+								https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Optional_chaining
+							*/}
 							{orders.orders ? (
 								orders.orders[0] ? (
 									orders.orders.map((order) => {

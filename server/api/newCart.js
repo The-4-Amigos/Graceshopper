@@ -4,6 +4,7 @@ const ProductOrders = require('../db/models/ProductOrders');
 const Product = require('../db/models/Product');
 
 // helper functions
+// o: these two functions could be a good use case for an class method
 const findCart = (userId) =>
 	Orders.findAll({
 		where: {
@@ -38,8 +39,10 @@ router.get('/:id', async (req, res, next) => {
 	}
 });
 
+// o: look into using a find or create
 router.post('/', async (req, res, next) => {
 	try {
+		// o: remove all vars and convert to lets
 		const order = req.cart;
 		var newProductOrder;
 		newProductOrder = await ProductOrders.findOne({
@@ -80,6 +83,7 @@ router.post('/', async (req, res, next) => {
 
 router.put('/:id', async (req, res, next) => {
 	try {
+		// o: remove all vars and convert to lets
 		var order = await Orders.findOne({
 			where: {
 				userId: req.params.id,

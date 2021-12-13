@@ -16,6 +16,8 @@ router.post('/login', async (req, res, next) => {
 
 router.post('/signup', async (req, res, next) => {
   try {
+    // o: protect against someone making themselves an admin here 
+    //  by destructuring
     const user = await User.create(req.body)
     res.send({token: await user.generateToken()})
   } catch (err) {

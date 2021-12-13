@@ -24,6 +24,7 @@ class Routes extends Component {
   render() {
     const { isLoggedIn, isAdmin } = this.props;
     return (
+      // o: look into improving how you are using your Switch statements here
       <Switch>
           <Route exact path="/" component={AllProducts} />
           <Route exact path="/products" component={AllProducts} />

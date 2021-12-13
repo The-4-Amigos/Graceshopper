@@ -26,6 +26,7 @@ export default function SingleOrder(props) {
 					</tr>
 				</thead>
 				<tbody>
+					{/* o: is there an instance where this fails without the ternary */}
 					{products ? (
 						products.map((item, index) => {
 							return (
