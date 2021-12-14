@@ -1,30 +1,88 @@
 const router = require('express').Router()
-const { models: { User }} = require('../db')
-module.exports = router
+const { models: { User, Order, Product }} = require('../db')
+const verifyAdmin = require('./authMiddleware')
 
-router.get('/', async (req, res, next) => {
+//get all users with info only available to logged in admins
+//api/users/admin
+router.get('/admin', verifyAdmin , async (req, res, next) => {
   try {
-    const users = await User.findAll({
-      // explicitly select only the id and username fields - even though
-      // users' passwords are encrypted, it won't help if we just
-      // send everything to anyone who asks!
-      attributes: ['id', 'username']
-    })
-    res.json(users)
+    const AllUsers = await User.findAll();
+    res.send(AllUsers);
   } catch (err) {
-    next(err)
+    next(err);
+  }
+});
+
+//get user by id, only available to admin
+
+router.get('/:userId', verifyAdmin, async (req, res, next) => {
+  try {
+  const id = req.params.userId
+  const singleUser = await User.findByPk(id)
+  if (!singleUser) {
+      res.sendStatus(404)
+      return
+  }
+  res.send(singleUser)
+  } catch (error) {
+      next (error)
   }
 })
 
-//get single user with associated order/s
-// router.get('/:userId', async (req, res, next) => {
-//   try {
-//   const id = req.params.userId
-//   const singleOrder = await User.findByPk(id, {
-//       include: { model: Order}
-//   })
-//   res.send(singleOrder)
-//   } catch (error) {
-//       next (error)
-//   }
-// })
+// get single user with associated order/s
+router.get('/:userId', async (req, res, next) => {
+  try {
+  const id = req.params.userId
+  const userWithOrders = await User.findByPk(id, {
+    include: [{
+      model: Order,
+      as: 'orders',
+      include: [{
+        model: Product,
+        as: 'products'
+      }]
+    }]
+  })
+  res.send(userWithOrders)
+  } catch (error) {
+      next (error)
+  }
+})
+
+//admin post/create request with verifyAdmin middleware
+
+router.post('/', verifyAdmin , async (req, res, next) => {
+  try {
+  res.status(201).send(await User.create(req.body))
+  } catch (error) {
+    next (error)
+  }
+} )
+
+//admin put/update request with verifyAdmin middleware
+
+router.put('/:userId', verifyAdmin, async (req, res, next) => {
+  try {
+  const id = req.params.userId
+  const userToUpdate = await User.findByPk(id)
+  res.send(await userToUpdate.update(req.body))
+  } catch (error) {
+    next (error)
+  }
+} )
+
+//admin delete request with verifyAdmin middleware
+
+router.delete('/:userId', verifyAdmin, async (req, res, next) => {
+    try {
+    const id = req.params.userId
+    const userToDelete = await User.findByPk(id)
+    await userToDelete.destroy()
+    res.send(userToDelete)
+  } catch (error) {
+      next (error)
+    }
+  } )
+
+
+module.exports = router

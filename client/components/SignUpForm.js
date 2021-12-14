@@ -1,6 +1,5 @@
 import React from 'react';
 
-
 /**
  * COMPONENT
  */
@@ -31,16 +30,18 @@ const SignUpForm = (props) => {
 					</label>
 					<input name="email" type="text" />
 					<label htmlFor="address">
-						<text>Address</text>
+						Address
 					</label>
 					<input name="address" type="text" />
 					<label htmlFor="dob">
-						<text>Date of Birth</text>
+						Date of Birth
 					</label>
 					<input name="dob" type="date" />
 				</div>
 				<div>
-					<button type="submit">{displayName}</button>
+					<a href="/home">
+						<button type="submit">{displayName}</button>
+					</a>
 				</div>
 				{error && error.response && <div> {error.response.data} </div>}
 			</form>

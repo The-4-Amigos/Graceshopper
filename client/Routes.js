@@ -2,11 +2,14 @@ import React, { Component, Fragment } from 'react';
 import { connect } from 'react-redux';
 import { withRouter, Route, Switch, Redirect } from 'react-router-dom';
 import AllProducts from './components/AllProducts';
-import Checkout from './components/Cart';
 import { Login, Signup } from './components/AuthForm';
-import Home from './components/Home';
+import Profile from './components/Profile';
 import SingleProduct from './components/SingleProduct';
 import { me } from './store';
+import GuestCart from './components/Cart';
+import UserCart from './components/UserCart';
+import AllUsersAdminView from './components/AllUsersAdminView';
+import SingleUser from './components/SingleUser';
 
 /**
  * COMPONENT
@@ -17,39 +20,33 @@ class Routes extends Component {
   }
 
   render() {
-    const { isLoggedIn } = this.props;
-
+    const { isLoggedIn, isAdmin } = this.props;
     return (
-      <div>
-        {/* <Switch> 
-        <Route path="/" component={AllProducts}/>
-        </Switch> */}
-        <div>
-          {isLoggedIn ? (
-            <Switch>
-              <Route path="/home" component={Home} />
-              {/* <Redirect to="/home" /> */}
-              {/* isAdmin will have to be a forumula */}
-            </Switch>
-          ) : (
-            <Switch>
-              <Route path="/" exact component={AllProducts} />
-              <Route path="/login" component={Login} />
-              <Route path="/signup" component={Signup} />
-            </Switch>
-          )}
-        </div>
-        <div>
+      <Switch>
+        <Route exact path="/" component={AllProducts} />
+        <Route exact path="/products" component={AllProducts} />
+        <Route exact path="/cart" component={GuestCart} />
+        <Route path="/products/:productId" component={SingleProduct} />
+        <Route path="/users/:userId" component={SingleUser} />
+
+        {isLoggedIn ? (
           <Switch>
-            <Route path="/" exact component={AllProducts} />
-            <Route exact path="/products" component={AllProducts} />
-
-            <Route exact path="/cart" component={Checkout} />
-
-            <Route path="/products/:productId" component={SingleProduct} />
+            <Route path="/user/:userId" component={Profile} />
+            <Route exact path="/cart/:userId" component={UserCart} />
+            {isLoggedIn && isAdmin && (
+              <Switch>
+                <Route exact path="/users" component={AllUsersAdminView} />
+              </Switch>
+            )}
+            <Redirect to="/home" />
           </Switch>
-        </div>
-      </div>
+        ) : (
+          <Switch>
+            <Route path="/login" component={Login} />
+            <Route path="/signup" component={Signup} />
+          </Switch>
+        )}
+      </Switch>
     );
   }
 }
@@ -64,10 +61,7 @@ const mapState = (state) => {
     // Being 'logged in' for our purposes will be defined has having a state.auth that has a truthy id.
     // Otherwise, state.auth will be an empty object, and state.auth.id will be falsey
     isLoggedIn: !!state.auth.id,
-    //no.state.auth.admin
-    //bring rom state
-    // show extra start from the nav bar
-    //will chnage to routes and navbar
+    isAdmin: !!state.auth.isAdmin,
   };
 };
 

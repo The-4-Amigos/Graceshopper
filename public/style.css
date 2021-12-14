@@ -21,9 +21,65 @@ form div {
 }
 
 .single-product-border {
-  border: 2px solid rgb(110, 108, 108);
+  border: 2px solid rgb(218, 214, 214);
   margin: auto;
-  width: 50%;
+  width: 75%;
   padding: 15px;
+  margin-bottom: 5%;
   text-align: center;
 }
+
+
+.products-image-size {
+  height: 500px;
+  width: 500px
+}
+
+.add-user-form {
+  margin: auto;
+  width: 50%
+}
+
+.delete-button {
+  background-color: rgb(202, 38, 38);
+  margin: 10px;
+  color: beige;
+}
+
+.delete-button:hover {
+  background-color: rgb(202, 38, 38);
+  filter: brightness(125%);
+  margin: 10px;
+  color: beige;
+}
+
+.view-user-info-button {
+  background-color: rgb(19, 88, 179);
+  margin: 10px;
+  color: beige;
+}
+
+.view-user-info-button:hover {
+  background-color: rgb(19, 88, 179);
+  filter: brightness(125%);
+  margin: 10px;
+  color: beige;
+}
+
+.single-user-info {
+  margin: auto;
+  width: 50%;
+}
+
+.add-new-user-button {
+  background-color: rgb(24, 179, 19);
+  margin: 10px;
+  color: beige;
+}
+
+.add-new-user-button:hover {
+  background-color: rgb(24, 179, 19);
+  filter: brightness(125%);
+  margin: 10px;
+  color: beige;
+  }
