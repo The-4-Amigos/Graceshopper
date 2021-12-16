@@ -24,21 +24,19 @@ const getNewCart = (cart) => ({ type: GET_NEW_CART, cart });
  * THUNK CREATORS
  */
 
-export const addItemThunk = (item) => {
+export const addItemThunk = (id, item) => {
 	return async (dispatch) => {
-		const res = await axios.post(`/api/cart`, item);
+		const res = await axios.post(`/api/cart/${id}`, item);
 		var newPro = res.data.product;
-		newPro.product_Order = res.data.newProductOrder;
-
 		dispatch(addItem(newPro));
 	};
 };
 
-export const removeItemThunk = (item) => {
+export const removeItemThunk = (id, item) => {
 	return async (dispatch) => {
-		const res = await axios.delete(`/api/cart/${item.id}`);
+		const res = await axios.delete(`/api/cart/${id}`, { data: { item } });
 
-		dispatch(removeItem(item));
+		dispatch(removeItem(res));
 	};
 };
 
@@ -54,10 +52,7 @@ export const getCartThunk = (userId) => async (dispatch) => {
 export const updateItemThunk = (id, item) => async (dispatch) => {
 	try {
 		const res = await axios.put(`/api/cart/${id}`, item);
-		var newProduct = res.data.product;
-		newProduct.productOrders = res.data.productOrder;
-
-		dispatch(updateCart(newProduct));
+		dispatch(updateCart(res));
 	} catch (err) {
 		console.error(err);
 	}
@@ -76,21 +71,17 @@ export const getNewCartThunk = () => async (dispatch) => {
  * REDUCER
  */
 
-export default function (state = { products: [] }, action) {
+let newProducts;
 
+export default function (state = { products: [] }, action) {
 	switch (action.type) {
 		case GET_CART:
 			return action.cart;
 		case ADD_ITEM:
-			const newProductArr = state.products.filter(
-				(product) => product.id !== action.item.id
-			);
-			newProductArr.push(action.item);
-
-			return { ...state, products: newProductArr };
+			return { ...state };
 
 		case REMOVE_ITEM:
-			const newProducts = state.products.filter(
+			newProducts = state.products.filter(
 				(product) => product.id !== action.item.id
 			);
 			return { ...state, products: newProducts };

@@ -20,7 +20,6 @@ router.get('/:id', async (req, res, next) => {
 		});
 		res.status(200).send(userOrder);
 	} catch (err) {
-		console.log('This is the error in order route', err);
 		next(err);
 	}
 });
@@ -35,10 +34,6 @@ router.get('/byorder/:orderId', async (req, res, next) => {
 		});
 		res.status(200).send(orderById);
 	} catch (err) {
-		console.log(
-			'This error appears when trying to get an order by the order id',
-			err
-		);
 		next(err);
 	}
 });

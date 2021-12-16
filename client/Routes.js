@@ -10,6 +10,10 @@ import GuestCart from './components/Cart';
 import UserCart from './components/UserCart';
 import AllUsersAdminView from './components/AllUsersAdminView';
 import SingleUser from './components/SingleUser';
+import { HomePage } from './components/HomePage';
+import swal from 'sweetalert';
+import AllProductsAdminView from './components/AllProductsAdminView';
+import SingleProductAdminView from './components/SingleProductAdminView';
 
 /**
  * COMPONENT
@@ -23,11 +27,10 @@ class Routes extends Component {
     const { isLoggedIn, isAdmin } = this.props;
     return (
       <Switch>
-        <Route exact path="/" component={AllProducts} />
+        <Route exact path="/" component={HomePage} />
         <Route exact path="/products" component={AllProducts} />
         <Route exact path="/cart" component={GuestCart} />
         <Route path="/products/:productId" component={SingleProduct} />
-        <Route path="/users/:userId" component={SingleUser} />
 
         {isLoggedIn ? (
           <Switch>
@@ -35,7 +38,17 @@ class Routes extends Component {
             <Route exact path="/cart/:userId" component={UserCart} />
             {isLoggedIn && isAdmin && (
               <Switch>
+                <Route exact path="/users/:userId" component={SingleUser} />
                 <Route exact path="/users" component={AllUsersAdminView} />
+                <Route
+                  exact
+                  path="/adminProducts"
+                  component={AllProductsAdminView}
+                />
+                <Route
+                  path="/adminProducts/:productAdminId"
+                  component={SingleProductAdminView}
+                />
               </Switch>
             )}
             <Redirect to="/home" />

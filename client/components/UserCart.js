@@ -9,10 +9,8 @@ import { getCartThunk, removeItemThunk, updateItemThunk } from '../store/cart';
 class Cart extends React.Component {
 	constructor(props) {
 		super(props);
-		this.checkout = this.checkout.bind(this);
 		this.removeFromCart = this.removeFromCart.bind(this);
 		this.handleClick = this.handleClick.bind(this);
-		this.viewItem = this.viewItem.bind(this);
 	}
 
 	handleClick(evt, product) {
@@ -20,16 +18,10 @@ class Cart extends React.Component {
 		let newQuantity = parseInt(event.target.quantity.value);
 		event.target.quantity.value = '';
 
-		if (newQuantity === 0) {
-			this.removeFromCart(product);
-			return;
-		}
-
 		if (!newQuantity) {
 			return;
 		}
 		const newProductOrder = {
-			// orderId: order.id,
 			productId: product.id,
 			quantity: newQuantity,
 			price: product.price,
@@ -37,54 +29,79 @@ class Cart extends React.Component {
 		};
 
 		this.props.updateItem(this.props.currentUser.id, newProductOrder);
+		this.props.getCart(this.props.currentUser.id);
 	}
 
-	viewItem(product) {
-		this.props.history.push(`/products/${product.id}`);
-	}
-
-	removeFromCart(product) {
-		this.props.removeItem(product);
+	removeFromCart(userId, item) {
+		this.props.removeItem(userId, item);
+		this.props.getCart(this.props.currentUser.id);
 	}
 
 	componentDidMount() {
 		this.props.getCart(this.props.currentUser.id);
-	}
 
-	checkout() {
-		this.props.order(this.props.cart);
+
 	}
 
 	render() {
-		let { cart } = this.props;
+		let { cart, currentUser } = this.props;
 		let total = 0;
-		console.log('This is the user cart props', this.props.cart);
+		let itemTotal = 0;
+		if(cart.products) {
+			cart.products.forEach((item) => {
+			itemTotal += item.price * item.productOrders.quantity;
+			total += itemTotal;
+			return total
+		});
+		}
+		
+
 		return (
 			<div>
-				<h3>Cart</h3>
-				<div>
-					{cart ? (
-						cart[0] ? (
-							cart.map((cartItem) => (
-								<CartProducts
-									key={cartItem.id}
-									cartItem={cartItem}
-									handleClick={this.handleClick}
-									removeFromCart={this.removeFromCart}
-									viewItem={this.viewItem}
-								/>
-							))
-						) : (
-							<p>{this.props.currentUser.fullName}, your cart is empty</p>
-						)
-					) : (
-						<p>
-							{this.props.currentUser.fullName}, your cart is currently empty
-						</p>
-					)}
-					<button onClick={() => history.push('/signup')}>Purchase</button>
+				<div className="shopping-cart">
+					<div className="column-labels">
+						<h1>Shopping Cart</h1>
+						<table>
+							<thead>
+								<tr>
+									<th></th>
+									<th>Name</th>
+									<th>Price</th>
+									<th>Quantity</th>
+									<th>Remove</th>
+								</tr>
+							</thead>
+
+							{cart.products ? (
+								cart.products[0] ? (
+									<CartProducts
+										cartItem={cart.products}
+										handleClick={this.handleClick}
+										removeFromCart={this.removeFromCart}
+										currentUser={currentUser}
+									/>
+								) : (
+									<tbody>
+										<tr>
+											<td>Your cart is empty</td>
+										</tr>
+									</tbody>
+								)
+							) : (
+								<tbody>
+									<tr>
+										<td>
+											{this.props.currentUser.fullName}, your cart is currently
+											empty
+										</td>
+									</tr>
+								</tbody>
+							)}
+						</table>
+					</div>
 					<div>
-						<h3>Total: ${total}</h3>
+						<div className="total-amount">
+							<h3>Subtotal: ${total}</h3></div>
 					</div>
 				</div>
 			</div>
@@ -99,8 +116,8 @@ const mapState = (state) => ({
 
 const mapDispatch = (dispatch) => {
 	return {
-		removeItem: (item) => dispatch(removeItemThunk(item)),
-		updateItem: (id, item) => dispatch(updateItemThunk(item)),
+		removeItem: (userId, item) => dispatch(removeItemThunk(userId, item)),
+		updateItem: (id, item) => dispatch(updateItemThunk(id, item)),
 		getCart: (id) => dispatch(getCartThunk(id)),
 	};
 };

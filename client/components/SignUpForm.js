@@ -8,7 +8,7 @@ const SignUpForm = (props) => {
 	const { name, displayName, handleSubmit, error } = props;
 
 	return (
-		<div>
+		<div id="signUp">
 			<form onSubmit={handleSubmit} name={name}>
 				<div>
 					<label htmlFor="username">

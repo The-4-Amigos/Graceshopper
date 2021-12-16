@@ -34,7 +34,7 @@ module.exports = db.define('product', {
     },
     description: {
         type: Sequelize.STRING,
-        defaultValue: 'If life gives you lemons, Add a bottle of your favorite alcohol'
+        defaultValue: 'If life gives you lemons, make lemonade'
     },
     alcoholType: {
         type: Sequelize.ENUM('tequila', 'whiskey', 'wine', 'rum'),

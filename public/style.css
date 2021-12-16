@@ -1,5 +1,30 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap");
+:root {
+  --green: #fff;
+  --black: black;
+  --light-color: rgb(116, 114, 114);
+  --box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+  --border: 0.2rem solid rgba(0, 0, 0, 0.1);
+  --outline: 0.1rem solid rgba(0, 0, 0, 0.1);
+  --outline-hover: 0.2rem solid var(--black);
+}
+* {
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  border: none;
+  text-decoration: none;
+  text-transform: capitalize;
+  transition: all 0.2s linear;
+}
+
 body {
-  font-family: sans-serif;
+  background: rgba(91, 104, 30, 0.913);
+}
+section {
+  padding: 2rem 9%;
 }
 
 a {
@@ -17,27 +42,363 @@ nav a {
 
 form div {
   margin: 1em;
-  display: inline-block;
+  /* display: inline-block; */
 }
 
-.single-product-border {
-  border: 2px solid rgb(218, 214, 214);
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 9%;
+  background: #fff;
+  /* box-shadow: blue; */
+}
+.navbar Link {
+  font-size: 1.7rem;
+  margin: 0 1rem;
+  color: rgb(229, 255, 0);
+}
+
+.navbar Link:hover {
+  color: green;
+}
+
+.number {
+  padding: 0rem 0rem 2rem 0rem;
+  margin: 1rem 0rem 1rem 0rem;
+}
+
+section {
+  padding: 2rem 9%;
+}
+
+.home {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: url() no-repeat;
+  background-position: center;
+  background-size: cover;
+  padding-top: 17rem;
+  padding-bottom: 10rem;
+}
+
+/* not sure if needed */
+.allProducts {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: url() no-repeat;
+  background-position: center;
+  background-size: cover;
+  padding-top: 10rem;
+  padding-bottom: 10rem;
+}
+
+#loggin {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: url("https://kpattorney.com/wp-content/uploads/2020/02/Dram-Shop-Laws-explained-by-kanner-and-pintaluga-scaled.jpeg")
+    no-repeat;
+  background-position: center;
+  background-size: cover;
+  padding-top: 10rem;
+  padding-bottom: 10rem;
+}
+
+form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 10rem;
+  padding-bottom: 10rem;
+  color: rgb(255, 255, 255);
+}
+
+#signUp {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: url("https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fstatic.onecms.io%2Fwp-content%2Fuploads%2Fsites%2F28%2F2021%2F01%2F15%2Falcohol-bottles-bar-STRONGESTLIQS9121.jpg&q=85");
+  background-position: center;
+  background-size: 80% auto;
+  padding-top: 10rem;
+  padding-bottom: 10rem;
+  color: black;
+}
+
+/*all buttons*/
+button {
+  display: inline-block;
+  padding: 0.9rem 1.9rem;
+  color: rgb(55, 103, 55);
+  border-radius: 16px;
+  text-transform: capitalize;
+}
+
+button:hover {
+  background-color: rgb(0, 0, 0);
+}
+
+/*all products*/
+
+#products {
+  display: flex;
+  justify-content: space-between;
+  background: url("https://p0.piqsels.com/preview/902/404/8/blurred-background-close-up-colors-dark.jpg");
+}
+.product .wrapper {
+  /* padding: 1.7rem; */
+  padding-top: 1rem;
+  padding-bottom: 25rem;
+  display: flex;
+  /* flex: 1 1 1 100%; */
+  /* flex-basis: 100%; */
+  flex-wrap: wrap;
+  gap: 1rem 1rem 1rem 1rem;
+  justify-content: space-between;
+}
+
+.products .product {
+  padding: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  /* justify-content: space-between; */
+}
+
+.products .product:first-child {
+  padding: 2rem;
+}
+
+/* FIX FLEX ALL PRODUCTS IN LINE */
+.products .product .box {
+  background: #fff;
+  border-radius: 0.4rem;
+  text-align: center;
+  padding: 2rem 1rem 1rem 1rem;
+  margin: 0rem 0rem 2rem 1rem;
+  /* outline-offset: groove; */
+  outline: var(--outline);
+  box-shadow: var(--box-shadow);
+  /* transition: 0.2s linear; */
+  justify-content: space-between;
+}
+
+.products .product .box:hover {
+  outline-offset: 0rem;
+  outline: var(--outline-hover);
+}
+
+.products .product .box img {
+  height: 20rem;
+  width: 20rem;
+  /* height: 300px;
+  width: 300px; */
+}
+
+.products .product .box h3 {
+  font-size: 2.5rem;
+  color: var(--black);
+}
+.products .product .box .price {
+  font-size: 2rem;
+  color: var(--light-color);
+  padding: 0.5rem 0;
+}
+
+/* cart*/
+.shopping-cart {
+  /* display: flex; */
+  /* align-items: center; */
+  /* justify-content: center; */
+  /* background: url() no-repeat; */
+  /* background-position: center; */
+  /* background-size: cover; */
+
+  /* background: url("https://kpattorney.com/wp-content/uploads/2020/02/Dram-Shop-Laws-explained-by-kanner-and-pintaluga-scaled.jpeg")
+    no-repeat; */
+  padding-top: 10rem;
+  padding-bottom: 10rem;
+}
+/* .totalLabel{
+  text-align: right;
+  padding-right: 2rem;
+  display: inline-block;
+} */
+
+.cart-box {
+  display: flex;
+}
+.cart-box:hover {
+  box-shadow: var(--box-shadow);
+}
+
+.cart-box img {
+  transform: scale(1.04);
+}
+
+td img{
+  width: 200px;
+  height: 200px;
+}
+/* .product-info{
+  
+} */
+
+.noItems {
+display: flex;
+justify-content: center;
+  padding-top: 17rem;
+  padding-bottom: 10rem;
+}
+
+
+
+/* .container{
+
+  background: url("https://p0.piqsels.com/preview/902/404/8/blurred-background-close-up-colors-dark.jpg");
+  padding: 8rem ;
+  padding-left: 1rem;
+  box-sizing: border-box;
+  background-position: center;
+  background-size: 80% auto; */
+/* max-width: 1200px;
+  margin: 0 auto; */
+/* } */
+
+/* .container h1{
+  padding: 20px 0;
+}
+
+.productCart{
+  padding-top: 10px 0;
+  display: flex;
+}
+
+.productCart{
+  display: flex;
+  width: 100px;
+  height: 200px;
+  /* overflow: hidden; */
+/* border: 1px solid silver;
+} */
+
+/* .productCart:hover{
+    border: none;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    transform: scale(1.01);
+}
+
+.productCart img{
+  display: flex;
+  width: 300px;
+  height: 400px;
+  object-fit: cover;
+}
+
+.productCart img:hover{
+  transform: scale(1.04);
+}
+.product-info{
+  padding: 10rem;
+  width: 100%;
+  position: relative;
+}
+.productNameCart, .product-productPriceCart{
+  margin-bottom: 20px;
+}
+.product-removal-Cart{
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  padding: 10px 25px;
+} */
+
+/*single product*/
+#noItems {
+  flex: center;
+}
+.cart-box {
+  display: flex;
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+  border: 1px solid silver;
+}
+.product-info {
+  display: flex;
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+  border: 1px solid silver;
+}
+.product-info:hover {
+  border: none;
+  box-shadow: var(--box-shadow);
+}
+
+.product-info img {
+  width: 300px;
+  height: 200px;
+  object-fit: cover;
+}
+
+#box {
+  background: #fff;
+  border-radius: 0.2rem;
+  text-align: center;
+  padding: 7rem 1rem;
+  outline-offset: groove;
+  outline: var(--outline);
+  box-shadow: var(--box-shadow);
+  transition: 0.2s linear;
+}
+#box img {
+  width: 25rem;
+  height: 25rem;
+}
+.price {
+  font-size: 2rem;
+  color: var(--light-color);
+  padding: 0.5rem 0;
+}
+
+.singleUser {
+  padding-top: 7rem 1rem;
+}
+
+/* https://images.unsplash.com/photo-1581775275191-f5f151f0a9dd?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8YmFyJTIwZHJpbmtzfGVufDB8fDB8fA%3D%3D&w=1000&q=80 */
+/* .single-product-border { */
+/* border: 2px solid rgb(218, 214, 214);
   margin: auto;
   width: 75%;
   padding: 15px;
   margin-bottom: 5%;
-  text-align: center;
+  text-align: center; */
+/* 
+  flex-basis: 50px;
+  box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.94);
+  margin: 20px 20px;
+  padding: 10px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
 }
 
-
 .products-image-size {
-  height: 500px;
-  width: 500px
+  height: 300px;
+  width: 300px;
 }
 
 .add-user-form {
   margin: auto;
-  width: 50%
+  width: 50%;
 }
 
 .delete-button {
@@ -82,4 +443,152 @@ form div {
   filter: brightness(125%);
   margin: 10px;
   color: beige;
+}
+
+
+.allProducts {
+  flex-basis: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+
+
+/*home page*/
+/* .welcome {
+  flex-direction: center;
+}
+.infoSection {
+  width: 300px;
+  border: 15px solid green;
+  padding: 50px;
+  margin: 20px;
+}
+.img-description {
+  display: flex;
+  margin-top: 10%;
+}
+
+.container{
+  position: relative;
+  max-width: 81rem;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 3rem;
+  z-index: 10;
+}
+header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: black;
+  
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+.logo img {
+  width: 40px;
+}
+.logo h3 {
+  color: var(--darkTwo);
+  font-size: 1.55rem;
+  line-height: 1.2;
+  font-weight: 700;
+  margin-right: 0.6rem;
+  margin-top: 2rem;
+}
+
+.navLinks ul{
+  display: flex;
+  list-style: none;
+  align-items: center;
+}
+.navLinks Link a{
+color: var(--lightTwo);
+margin-left: 4.5rem;
+display: inline-block;
+}
+.navLinks:hover {
+  color: var(--hoverColor);
+  transform: scale(1.05);
+}
+
+.HomePage-Showcase-Area{
+display: grid;
+grid-template-columns: repeat(2, 1fr);
+align-items: center;
+justify-content: center;
+
+}
+
+.left{
+
+}
+.right{
+
+} */
+
+#loggin {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: url("https://kpattorney.com/wp-content/uploads/2020/02/Dram-Shop-Laws-explained-by-kanner-and-pintaluga-scaled.jpeg")
+    no-repeat;
+  background-position: center;
+  background-size: cover;
+  padding-top: 10rem;
+  padding-bottom: 10rem;
+}
+
+
+  .view-more-product-info-button {
+    background-color: rgb(19, 88, 179);
+    margin: 10px;
+    color: beige;
+  }
+  
+  .view-more-product-info-button:hover {
+    background-color: rgb(19, 88, 179);
+    filter: brightness(125%);
+    margin: 10px;
+    color: beige;
+  }
+
+  .back-to-all-products-link {
+    margin-top: 40px;
+  }
+
+  .single-user-info-div {
+    border: 2px solid rgb(218, 214, 214);
+    margin: auto;
+    width: 50%;
+  }
+
+  #edit-user-restricted-button {
+    background-color: rgb(179, 51, 19);
+    margin: auto;
+    width: 50%;
+    margin: 30px;
+    color: beige;
+  }
+  
+  #edit-user-restricted-button:hover {
+    background-color: rgb(179, 51, 19);
+    filter: brightness(125%);
+    margin: auto;
+    width: 50%;
+    margin: 30px;
+    color: beige;
+    }
+
+  #user-view-by-admin-order-div {
+    margin-bottom: 20px;
+    border: 2px solid rgb(218, 214, 214);
+    margin: auto;
+    width: 50%;
   }

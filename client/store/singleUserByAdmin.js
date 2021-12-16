@@ -52,16 +52,6 @@ export const updateUser = (user) => {
     }
   }
 
-// export const removeRelation = (robotId, projectId) => {
-//     return async (dispatch) => {
-//         try {
-//         await axios.put(`/api/relations/${robotId}/${projectId}`)
-//         dispatch(fetchRobot(robotId))
-//         } catch (error) {
-//             console.log(error)
-//         }
-//     }
-// }
 
 //initalState & reducer
 

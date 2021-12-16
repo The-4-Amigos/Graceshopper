@@ -1,29 +1,40 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { getSingleProduct } from '../store/singleProduct';
-import { addProduct } from "../store/CheckoutStore";
+import { addProduct } from '../store/CheckoutStore';
+import { Link } from 'react-router-dom';
+import { addItemThunk } from '../store/cart';
 
 export class SingleProduct extends React.Component {
-  // constructor() {
-  //   super();
-  //   this.state = {
-  //     qty: 1,
-  //   };
-  // }
-  componentDidMount() {
-    this.props.getSingleProduct(this.props.match.params.productId);
-  }
+	constructor(props) {
+		super(props);
+		this.handleClick = this.handleClick.bind(this);
+		this.addIt = this.addIt.bind(this);
+	}
+	addIt(product) {
+		const newProductOrder = {
+			productId: product.id,
+			price: product.price,
+		};
+		this.props.addItem(this.props.currentUser.id, newProductOrder);
+	}
 
+	handleClick(product) {
+		this.props.isLoggedIn ? this.addIt(product) : this.props.addToCart(product);
+	}
+	componentDidMount() {
+		this.props.getSingleProduct(this.props.match.params.productId);
+	}
 
   render() {
-    const { singleProduct, addToCart  } = this.props;
+    const { singleProduct } = this.props;
     return (
       <div>
-        <div>
+        <div id='box'>
           <div className="single-product-border">
             <h1>{singleProduct.name}</h1>
             <img className="products-image-size" src={singleProduct.image} />
-            <h1>Price: ${singleProduct.price}</h1>
+            <h1 className="price">Price: ${singleProduct.price}</h1>
             <p>Description: {singleProduct.description}</p>
             <h3>ABV: {singleProduct.ABV}%</h3>
             <h3>Category: {singleProduct.alcoholType}</h3>
@@ -34,10 +45,17 @@ export class SingleProduct extends React.Component {
                 <h1>Out of stock</h1>
               )}
             </div>
-            <button onClick={() => {addToCart(singleProduct)}}>
-              <h1>add to cart</h1>
-            </button>
+							<button
+								onClick={() => {
+									this.handleClick(singleProduct);
+								}}
+							>
+								<h1>add to cart</h1>
+							</button>
           </div>
+	<div className="back-to-all-products-link">
+							<Link to={'/products'}>Back to All Products</Link>
+						</div>
         </div>
       </div>
     );
@@ -49,6 +67,7 @@ const mapState = (state) => {
 		singleProduct: state.singleProductReducer,
 		cart: state.guestCart,
 		currentUser: state.currentUser,
+		isLoggedIn: !!state.auth.id,
 	};
 	//have to return state as value to a key
 };
@@ -56,7 +75,8 @@ const mapState = (state) => {
 const mapDispatch = (dispatch) => {
 	return {
 		getSingleProduct: (productId) => dispatch(getSingleProduct(productId)),
-    addToCart: (product) => dispatch(addProduct(product)),
+		addToCart: (product) => dispatch(addProduct(product)),
+		addItem: (id, item) => dispatch(addItemThunk(id, item)),
 	};
 };
 

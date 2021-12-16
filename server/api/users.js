@@ -18,22 +18,7 @@ router.get('/admin', verifyAdmin , async (req, res, next) => {
 router.get('/:userId', verifyAdmin, async (req, res, next) => {
   try {
   const id = req.params.userId
-  const singleUser = await User.findByPk(id)
-  if (!singleUser) {
-      res.sendStatus(404)
-      return
-  }
-  res.send(singleUser)
-  } catch (error) {
-      next (error)
-  }
-})
-
-// get single user with associated order/s
-router.get('/:userId', async (req, res, next) => {
-  try {
-  const id = req.params.userId
-  const userWithOrders = await User.findByPk(id, {
+  const singleUserWithOrders = await User.findByPk(id, {
     include: [{
       model: Order,
       as: 'orders',
@@ -43,11 +28,16 @@ router.get('/:userId', async (req, res, next) => {
       }]
     }]
   })
-  res.send(userWithOrders)
+  if (!singleUserWithOrders) {
+      res.sendStatus(404)
+      return
+  }
+  res.send(singleUserWithOrders)
   } catch (error) {
       next (error)
   }
 })
+
 
 //admin post/create request with verifyAdmin middleware
 

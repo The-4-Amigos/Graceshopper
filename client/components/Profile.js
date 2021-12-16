@@ -19,7 +19,7 @@ class Profile extends React.Component {
 
 	render() {
 		const { currentUser, orders } = this.props;
-		const { id, fullName, email, address, dob } = currentUser
+		const { id, fullName, email, address, dob } = currentUser;
 		// console.log('This is req:', req.orders);
 		return (
 			<div>
@@ -32,15 +32,6 @@ class Profile extends React.Component {
 						<p>Address: {address}</p>
 						<p>Date of Birth: {dob}</p>
 						<div>
-							<Link to={`/users/${id}/edit`}>
-								<button
-									onClick={() => {
-										console.log('clicked edit!');
-									}}
-								>
-									Edit
-								</button>
-							</Link>
 							<h2>Order History</h2>
 							{orders.orders ? (
 								orders.orders[0] ? (
