@@ -1,742 +1,738 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap');
 :root {
-	--green: #fff;
-	--black: black;
-	--light-color: rgb(116, 114, 114);
-	--box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
-	--border: 0.2rem solid rgba(0, 0, 0, 0.1);
-	--outline: 0.1rem solid rgba(0, 0, 0, 0.1);
-	--outline-hover: 0.2rem solid var(--black);
+  --green: #fff;
+  --black: black;
+  --light-color: rgb(116, 114, 114);
+  --box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+  --border: 0.2rem solid rgba(0, 0, 0, 0.1);
+  --outline: 0.1rem solid rgba(0, 0, 0, 0.1);
+  --outline-hover: 0.2rem solid var(--black);
 }
 * {
-	font-family: 'Poppins', sans-serif;
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
-	outline: none;
-	border: none;
-	text-decoration: none;
-	/* text-transform: capitalize; */
-	transition: all 0.2s linear;
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  border: none;
+  text-decoration: none;
+  transition: all 0.2s linear;
 }
 
 body {
-	background: rgba(255, 255, 255, 0.913);
+  background: rgba(255, 255, 255, 0.913);
 }
 
 section {
-	padding: 2rem 9%;
+  padding: 2rem 9%;
 }
 
 a {
-	text-decoration: none;
+  text-decoration: none;
 }
 
 label {
-	display: block;
+  display: block;
 }
 
 nav a {
-	display: inline-block;
-	margin: 1em;
+  display: inline-block;
+  margin: 1em;
 }
 
 form div {
-	margin: 1em;
-	/* display: inline-block; */
+  margin: 1em;
+  /* display: inline-block; */
 }
 
 .navbar {
-	position: fixed;
-	top: 0;
-	left: 0;
-	right: 0;
-	z-index: 1000;
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	padding: 1rem 9%;
-	background: #fff;
-	/* box-shadow: blue; */
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 9%;
+  background: #fff;
+  /* box-shadow: blue; */
 }
 .navbar Link {
-	font-size: 1.7rem;
-	margin: 0 1rem;
-	color: rgb(229, 255, 0);
+  font-size: 1.7rem;
+  margin: 0 1rem;
+  color: rgb(229, 255, 0);
 }
 
 .navbar div {
-	width: 65%;
+  width: 65%;
 }
 
 .navbar Link:hover {
-	color: green;
+  color: green;
 }
 
 .number {
-	padding: 0rem 0rem 2rem 0rem;
-	margin: 1rem 0rem 1rem 0rem;
+  padding: 0rem 0rem 2rem 0rem;
+  margin: 1rem 0rem 1rem 0rem;
 }
 
 section {
-	padding: 2rem 9%;
+  padding: 2rem 9%;
 }
 
 .home {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	background: url() no-repeat;
-	background-position: center;
-	background-size: cover;
-	padding-top: 17rem;
-	padding-bottom: 10rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: url() no-repeat;
+  background-position: center;
+  background-size: cover;
+  padding-top: 17rem;
+  padding-bottom: 10rem;
 }
 
 /* not sure if needed */
 .allProducts {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	background: url() no-repeat;
-	background-position: center;
-	background-size: cover;
-	padding-top: 10rem;
-	padding-bottom: 10rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: url() no-repeat;
+  background-position: center;
+  background-size: cover;
+  padding-top: 10rem;
+  padding-bottom: 10rem;
 }
 
 #loggin {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	background: url('https://kpattorney.com/wp-content/uploads/2020/02/Dram-Shop-Laws-explained-by-kanner-and-pintaluga-scaled.jpeg')
-		no-repeat;
-	background-position: center;
-	background-size: cover;
-	padding-top: 10rem;
-	padding-bottom: 10rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: url('https://kpattorney.com/wp-content/uploads/2020/02/Dram-Shop-Laws-explained-by-kanner-and-pintaluga-scaled.jpeg')
+    no-repeat;
+  background-position: center;
+  background-size: cover;
+  padding-top: 10rem;
+  padding-bottom: 10rem;
 }
 
 form {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	padding-top: 10rem;
-	padding-bottom: 10rem;
-	color: rgb(255, 255, 255);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 10rem;
+  padding-bottom: 10rem;
+  color: rgb(255, 255, 255);
 }
 
 #signUp {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	background: url('https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fstatic.onecms.io%2Fwp-content%2Fuploads%2Fsites%2F28%2F2021%2F01%2F15%2Falcohol-bottles-bar-STRONGESTLIQS9121.jpg&q=85');
-	background-position: center;
-	background-size: 80% auto;
-	padding-top: 10rem;
-	padding-bottom: 10rem;
-	color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: url('https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fstatic.onecms.io%2Fwp-content%2Fuploads%2Fsites%2F28%2F2021%2F01%2F15%2Falcohol-bottles-bar-STRONGESTLIQS9121.jpg&q=85');
+  background-position: center;
+  background-size: 80% auto;
+  padding-top: 10rem;
+  padding-bottom: 10rem;
+  color: black;
 }
 
 /*all buttons*/
 button {
-	display: inline-block;
-	padding: 0.9rem 1.9rem;
-	color: rgb(55, 103, 55);
-	border-radius: 16px;
-	text-transform: capitalize;
+  display: inline-block;
+  padding: 0.9rem 1.9rem;
+  color: rgb(55, 103, 55);
+  border-radius: 16px;
+  text-transform: capitalize;
 }
 
 button:hover {
-	background-color: rgb(0, 0, 0);
+  background-color: rgb(0, 0, 0);
 }
 
 /*all products*/
 
 #products {
-	display: flex;
-	justify-content: space-between;
-	background: url('https://p0.piqsels.com/preview/902/404/8/blurred-background-close-up-colors-dark.jpg');
+  display: flex;
+  justify-content: space-between;
+  background: url('https://p0.piqsels.com/preview/902/404/8/blurred-background-close-up-colors-dark.jpg');
 }
 .product .wrapper {
-	padding-top: 1rem;
-	padding-bottom: 25rem;
-	display: flex;
-	flex-wrap: wrap;
-	gap: 1rem 1rem 1rem 1rem;
-	justify-content: space-between;
+  padding-top: 1rem;
+  padding-bottom: 25rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem 1rem 1rem 1rem;
+  justify-content: space-between;
 }
 
 .products .product {
-	padding: 1rem;
-	display: flex;
-	flex-wrap: wrap;
-	/* justify-content: space-between; */
+  padding: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  /* justify-content: space-between; */
 }
 
 .products .product:first-child {
-	padding: 2rem;
+  padding: 2rem;
 }
 
 /* FIX FLEX ALL PRODUCTS IN LINE */
 .products .product .box {
-	background: #fff;
-	border-radius: 0.4rem;
-	text-align: center;
-	padding: 2rem 1rem 1rem 1rem;
-	margin: 0rem 0rem 2rem 1rem;
-	outline: var(--outline);
-	box-shadow: var(--box-shadow);
-	justify-content: space-between;
+  background: #fff;
+  border-radius: 0.4rem;
+  text-align: center;
+  padding: 2rem 1rem 1rem 1rem;
+  margin: 0rem 0rem 2rem 1rem;
+  outline: var(--outline);
+  box-shadow: var(--box-shadow);
+  justify-content: space-between;
 }
 
 .products .product .box:hover {
-	outline-offset: 0rem;
-	outline: var(--outline-hover);
+  outline-offset: 0rem;
+  outline: var(--outline-hover);
 }
 
 .products .product .box img {
-	height: 20rem;
-	width: 20rem;
-	/* height: 300px;
+  height: 20rem;
+  width: 20rem;
+  /* height: 300px;
   width: 300px; */
 }
 
 .products .product .box h3 {
-	font-size: 2.5rem;
-	color: var(--black);
+  font-size: 2.5rem;
+  color: var(--black);
 }
 .products .product .box .price {
-	font-size: 2rem;
-	color: var(--light-color);
-	padding: 0.5rem 0;
+  font-size: 2rem;
+  color: var(--light-color);
+  padding: 0.5rem 0;
 }
 
 /* cart*/
 .shopping-cart {
-	padding-top: 10rem;
-	padding-bottom: 10rem;
+  padding-top: 10rem;
+  padding-bottom: 10rem;
 }
-
 
 .cart-box {
-	display: flex;
+  display: flex;
 }
 .cart-box:hover {
-	box-shadow: var(--box-shadow);
+  box-shadow: var(--box-shadow);
 }
 
 .cart-box img {
-	transform: scale(1.04);
+  transform: scale(1.04);
 }
 
 td img {
-	width: 200px;
-	height: 200px;
+  width: 200px;
+  height: 200px;
 }
 /* .product-info{
   
 } */
 
 .noItems {
-	/* https://images.unsplash.com/photo-1581775275191-f5f151f0a9dd?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8YmFyJTIwZHJpbmtzfGVufDB8fDB8fA%3D%3D&w=1000&q=80 */
-	display: flex;
-	justify-content: center;
-	padding-top: 17rem;
-	padding-bottom: 10rem;
+  /* https://images.unsplash.com/photo-1581775275191-f5f151f0a9dd?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8YmFyJTIwZHJpbmtzfGVufDB8fDB8fA%3D%3D&w=1000&q=80 */
+  display: flex;
+  justify-content: center;
+  padding-top: 17rem;
+  padding-bottom: 10rem;
 }
-
 
 /*single product*/
 #noItems {
-	flex: center;
+  flex: center;
 }
 .cart-box {
-	display: flex;
-	width: 100%;
-	height: 200px;
-	overflow: hidden;
-	border: 1px solid silver;
+  display: flex;
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+  border: 1px solid silver;
 }
 .product-info {
-	display: flex;
-	width: 100%;
-	height: 200px;
-	overflow: hidden;
-	border: 1px solid silver;
+  display: flex;
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+  border: 1px solid silver;
 }
 .product-info:hover {
-	border: none;
-	box-shadow: var(--box-shadow);
+  border: none;
+  box-shadow: var(--box-shadow);
 }
 
 .product-info img {
-	width: 300px;
-	height: 200px;
-	object-fit: cover;
+  width: 300px;
+  height: 200px;
+  object-fit: cover;
 }
 
 #box {
-	background: #fff;
-	border-radius: 0.2rem;
-	text-align: center;
-	padding: 7rem 1rem;
-	outline-offset: groove;
-	outline: var(--outline);
-	box-shadow: var(--box-shadow);
-	transition: 0.2s linear;
+  background: #fff;
+  border-radius: 0.2rem;
+  text-align: center;
+  padding: 7rem 1rem;
+  outline-offset: groove;
+  outline: var(--outline);
+  box-shadow: var(--box-shadow);
+  transition: 0.2s linear;
 }
 #box img {
-	width: 25rem;
-	height: 25rem;
+  width: 25rem;
+  height: 25rem;
 }
 .price {
-	font-size: 2rem;
-	color: rgb(59, 59, 59);
-	padding: 0.5rem 0;
+  font-size: 2rem;
+  color: rgb(59, 59, 59);
+  padding: 0.5rem 0;
 }
 
 .singleUser {
-	padding-top: 7rem 1rem;
+  padding-top: 7rem 1rem;
 }
 
 #loggin {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	background: url('https://kpattorney.com/wp-content/uploads/2020/02/Dram-Shop-Laws-explained-by-kanner-and-pintaluga-scaled.jpeg')
-		no-repeat;
-	background-position: center;
-	background-size: cover;
-	padding-top: 10rem;
-	padding-bottom: 10rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: url('https://kpattorney.com/wp-content/uploads/2020/02/Dram-Shop-Laws-explained-by-kanner-and-pintaluga-scaled.jpeg')
+    no-repeat;
+  background-position: center;
+  background-size: cover;
+  padding-top: 10rem;
+  padding-bottom: 10rem;
 }
 
 .view-more-product-info-button {
-	background-color: rgb(19, 88, 179);
-	margin: 10px;
-	color: beige;
+  background-color: rgb(19, 88, 179);
+  margin: 10px;
+  color: beige;
 }
 
 .view-more-product-info-button {
-	background-color: rgb(19, 88, 179);
-	margin: 10px;
-	color: beige;
+  background-color: rgb(19, 88, 179);
+  margin: 10px;
+  color: beige;
 }
 
 .view-more-product-info-button:hover {
-	background-color: rgb(19, 88, 179);
-	filter: brightness(125%);
-	margin: 10px;
-	color: beige;
+  background-color: rgb(19, 88, 179);
+  filter: brightness(125%);
+  margin: 10px;
+  color: beige;
 }
 
 .back-to-all-products-link {
-	margin-top: 40px;
+  margin-top: 40px;
 }
 
 .single-user-info-div {
-	border: 2px solid rgb(218, 214, 214);
-	margin: auto;
-	width: 50%;
+  border: 2px solid rgb(218, 214, 214);
+  margin: auto;
+  width: 50%;
 }
 
 #edit-user-restricted-button {
-	background-color: rgb(179, 51, 19);
-	margin: auto;
-	width: 50%;
-	margin: 30px;
-	color: beige;
+  background-color: rgb(179, 51, 19);
+  margin: auto;
+  width: 50%;
+  margin: 30px;
+  color: beige;
 }
 
 #edit-user-restricted-button:hover {
-	background-color: rgb(179, 51, 19);
-	filter: brightness(125%);
-	margin: auto;
-	width: 50%;
-	margin: 30px;
-	color: beige;
+  background-color: rgb(179, 51, 19);
+  filter: brightness(125%);
+  margin: auto;
+  width: 50%;
+  margin: 30px;
+  color: beige;
 }
 
 #user-view-by-admin-order-div {
-	margin-bottom: 20px;
-	border: 2px solid rgb(218, 214, 214);
-	margin: auto;
-	width: 50%;
-}
-
-  /* checkoutForm*/
-  * {
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
-	text-rendering: optimizeLegibility;
-	box-sizing: border-box;
-}
-
-.containerFORM {
-	display: flex;
-	flex-direction: column;
-	max-width: 400px;
-	position: absolute;
-	/*     top: 50%; */
-	left: 50%;
-	transform: translate(-50%, 0%);
-	-webkit-transform: translate(-50%, 0%);
-	-ms-transform: translate(-50%, 0%);
-	transition: 1s all ease-in-out;
-	-webkit-transition: 1s all ease-in-out;
-	-moz-transition: 1s all ease-in-out;
-
-	/*FIND WHERE*/
-	width: 100%;
-	/* background-image:url(https://i.imgur.com/3jhku0g.gif);
-    background-size:cover; */
-}
-
-.boxFORM {
-	display: flex;
-	flex-direction: column;
-	text-align: center;
-	padding-top: 17rem;
-	padding-bottom: 10rem;
-	box-shadow: var(--box-shadow);
-}
-.credit-card-box {
-	width: 400px;
-	height: 280px;
-	background: linear-gradient(135deg, #03a9f4, #1976d2);
-	border-radius: 15px;
-	color: #fff !important;
-	text-shadow: 0 1px 1px hsla(0, 0, 0, 0.3);
-}
-.credit-card-box {
-	width: 400px;
-	height: 280px;
-	background: linear-gradient(135deg, #03a9f4, #1976d2);
-	border-radius: 15px;
-	color: #fff !important;
-	text-shadow: 0 1px 1px hsla(0, 0, 0, 0.3);
-}
-
-.card-panel {
-	padding-bottom: 0px;
-}
-
-#crickets {
-	width: 100px;
-	display: block;
-	margin-left: auto;
-	margin-right: auto;
+  margin-bottom: 20px;
+  border: 2px solid rgb(218, 214, 214);
+  margin: auto;
+  width: 50%;
 }
 
 /* checkoutForm*/
 * {
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
-	text-rendering: optimizeLegibility;
-	box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  box-sizing: border-box;
 }
 
 .containerFORM {
-	display: flex;
-	flex-direction: column;
-	max-width: 420px;
-	position: absolute;
-	box-shadow: var(--box-shadow);
-	justify-content: center;
-	background-color: rgb(185, 195, 177);
-	/* border-radius: 20% */
-	/*     top: 50%; */
-	left: 50%;
-	transform: translate(-50%, 0%);
-	-webkit-transform: translate(-50%, 0%);
-	-ms-transform: translate(-50%, 0%);
-	transition: 1s all ease-in-out;
-	-webkit-transition: 1s all ease-in-out;
-	-moz-transition: 1s all ease-in-out;
+  display: flex;
+  flex-direction: column;
+  max-width: 400px;
+  position: absolute;
+  /*     top: 50%; */
+  left: 50%;
+  transform: translate(-50%, 0%);
+  -webkit-transform: translate(-50%, 0%);
+  -ms-transform: translate(-50%, 0%);
+  transition: 1s all ease-in-out;
+  -webkit-transition: 1s all ease-in-out;
+  -moz-transition: 1s all ease-in-out;
 
-	/*FIND WHERE*/
-	width: 100%;
-	/* background-image:url(https://i.imgur.com/3jhku0g.gif);
+  /*FIND WHERE*/
+  width: 100%;
+  /* background-image:url(https://i.imgur.com/3jhku0g.gif);
     background-size:cover; */
 }
 
 .boxFORM {
-	display: flex;
-	flex-direction: column;
-	text-align: center;
-	padding-top: 5rem;
-	width: -65%;
-	padding-bottom: 10rem;
-	box-shadow: var(--box-shadow);
-	align-content: center;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  padding-top: 17rem;
+  padding-bottom: 10rem;
+  box-shadow: var(--box-shadow);
+}
+.credit-card-box {
+  width: 400px;
+  height: 280px;
+  background: linear-gradient(135deg, #03a9f4, #1976d2);
+  border-radius: 15px;
+  color: #fff !important;
+  text-shadow: 0 1px 1px hsla(0, 0, 0, 0.3);
+}
+.credit-card-box {
+  width: 400px;
+  height: 280px;
+  background: linear-gradient(135deg, #03a9f4, #1976d2);
+  border-radius: 15px;
+  color: #fff !important;
+  text-shadow: 0 1px 1px hsla(0, 0, 0, 0.3);
+}
+
+.card-panel {
+  padding-bottom: 0px;
+}
+
+#crickets {
+  width: 100px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* checkoutForm*/
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  box-sizing: border-box;
+}
+
+.containerFORM {
+  display: flex;
+  flex-direction: column;
+  max-width: 420px;
+  position: absolute;
+  box-shadow: var(--box-shadow);
+  justify-content: center;
+  background-color: rgb(185, 195, 177);
+  /* border-radius: 20% */
+  /*     top: 50%; */
+  left: 50%;
+  transform: translate(-50%, 0%);
+  -webkit-transform: translate(-50%, 0%);
+  -ms-transform: translate(-50%, 0%);
+  transition: 1s all ease-in-out;
+  -webkit-transition: 1s all ease-in-out;
+  -moz-transition: 1s all ease-in-out;
+
+  /*FIND WHERE*/
+  width: 100%;
+  /* background-image:url(https://i.imgur.com/3jhku0g.gif);
+    background-size:cover; */
+}
+
+.boxFORM {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  padding-top: 5rem;
+  width: -65%;
+  padding-bottom: 10rem;
+  box-shadow: var(--box-shadow);
+  align-content: center;
 }
 
 .table td:nth-child(1) {
-	width: 34px;
+  width: 34px;
 }
 
 table td:nth-child(3) {
-	width: 65px;
+  width: 65px;
 }
 
 .bold {
-	font-weight: bold;
-	font-size: 20px;
+  font-weight: bold;
+  font-size: 20px;
 }
 
 .credit-card-box {
-	width: 400px;
-	height: 280px;
-	background: linear-gradient(135deg, #2aa073, #1a8848);
-	border-radius: 15px;
-	color: #fff !important;
-	text-shadow: 0 1px 1px hsla(0, 0, 0, 0.3);
+  width: 400px;
+  height: 280px;
+  background: linear-gradient(135deg, #2aa073, #1a8848);
+  border-radius: 15px;
+  color: #fff !important;
+  text-shadow: 0 1px 1px hsla(0, 0, 0, 0.3);
 }
 
 .input-field.cvv,
 .input-field.number,
 .input-field.card-holder,
 .input-field.card-expiration-date {
-	display: inline-block;
+  display: inline-block;
 }
 
 .table td:nth-child(1) {
-	width: 34px;
+  width: 34px;
 }
 
 table td:nth-child(3) {
-	width: 65px;
+  width: 65px;
 }
 
 .bold {
-	font-weight: bold;
-	font-size: 20px;
+  font-weight: bold;
+  font-size: 20px;
 }
 
 .credit-card-box {
-	width: 400px;
-	height: 280px;
-	background: linear-gradient(135deg, #44e4a6, #209451);
-	border-radius: 15px;
-	color: #fff !important;
-	text-shadow: 0 1px 1px hsla(0, 0, 0, 0.3);
+  width: 400px;
+  height: 280px;
+  background: linear-gradient(135deg, #44e4a6, #209451);
+  border-radius: 15px;
+  color: #fff !important;
+  text-shadow: 0 1px 1px hsla(0, 0, 0, 0.3);
 }
 
 .input-field.cvv {
-	top: -6px;
-	margin-left: 6px !important;
+  top: -6px;
+  margin-left: 6px !important;
 }
 
 .input-field label {
-	color: #fff;
-	left: 0rem;
+  color: #fff;
+  left: 0rem;
 }
 
 .select-wrapper + label {
-	top: -1.8rem;
+  top: -1.8rem;
 }
 
 .select-wrapper span.caret {
-	top: 2px;
-	color: #fff;
+  top: 2px;
+  color: #fff;
 }
 
 .input-card-cvv {
-	width: 30px !important;
-	display: inline-block;
+  width: 30px !important;
+  display: inline-block;
 }
 
 .card-holder {
-	width: 150px !important;
-	margin-right: 10px;
+  width: 150px !important;
+  margin-right: 10px;
 }
 
 .card-expiration-date {
-	display: inline !important;
+  display: inline !important;
 }
 
 .card-expiration-date .select-wrapper,
 .card-expiration-date input {
-	display: inline !important;
-	width: 50px !important;
+  display: inline !important;
+  width: 50px !important;
 }
 
 .card-expiration-date .select-wrapper {
-	margin-right: 5px;
+  margin-right: 5px;
 }
 
 .card-expiration-date ul,
 .card-expiration-date li span {
-	width: 50px !important;
+  width: 50px !important;
 }
 
 .card-expiration-date .select-wrapper,
 .card-expiration-date input {
-	display: inline !important;
-	width: 50px !important;
+  display: inline !important;
+  width: 50px !important;
 }
 
 .card-expiration-date .select-wrapper {
-	margin-right: 5px;
+  margin-right: 5px;
 }
 
 .card-expiration-date ul,
 .card-expiration-date li span {
-	width: 50px !important;
+  width: 50px !important;
 }
 
 .logo img {
-	position: relative;
-	top: 0px;
-	left: 290px;
-	width: 60px;
-	filter: invert(1);
-	-moz-filter: invert(1);
-	-webkit-filter: invert(1);
+  position: relative;
+  top: 0px;
+  left: 290px;
+  width: 60px;
+  filter: invert(1);
+  -moz-filter: invert(1);
+  -webkit-filter: invert(1);
 }
 
 .checkout {
-	margin: 0px;
+  margin: 0px;
 }
 
 .btn-large {
-	margin: 10px 0%;
-	width: 100%;
+  margin: 10px 0%;
+  width: 100%;
 }
 
 .card-expiration-date .select-wrapper,
 .card-expiration-date input {
-	display: inline !important;
-	width: 50px !important;
+  display: inline !important;
+  width: 50px !important;
 }
 
 .card-expiration-date .select-wrapper {
-	margin-right: 5px;
+  margin-right: 5px;
 }
 
 .card-expiration-date ul,
 .card-expiration-date li span {
-	width: 50px !important;
+  width: 50px !important;
 }
 
 .logo img {
-	position: relative;
-	top: 0px;
-	left: 290px;
-	width: 60px;
-	filter: invert(1);
-	-moz-filter: invert(1);
-	-webkit-filter: invert(1);
+  position: relative;
+  top: 0px;
+  left: 290px;
+  width: 60px;
+  filter: invert(1);
+  -moz-filter: invert(1);
+  -webkit-filter: invert(1);
 }
 
 .checkout {
-	margin: 0px;
+  margin: 0px;
 }
 
 .animation-element.slide-left.in-view {
-	opacity: 1;
-	-moz-transform: translate3d(0px, 0px, 0px);
-	-webkit-transform: translate3d(0px, 0px, 0px);
-	-o-transform: translate(0px, 0px);
-	-ms-transform: translate(0px, 0px);
-	transform: translate3d(0px, 0px, 0px);
+  opacity: 1;
+  -moz-transform: translate3d(0px, 0px, 0px);
+  -webkit-transform: translate3d(0px, 0px, 0px);
+  -o-transform: translate(0px, 0px);
+  -ms-transform: translate(0px, 0px);
+  transform: translate3d(0px, 0px, 0px);
 }
 
 .credit-card-box.animation-element:hover {
-	-moz-transition: all 200ms linear;
-	-webkit-transition: all 200ms linear;
-	-o-transition: all 200ms linear;
-	transition: all 200ms linear;
-	-moz-transform: translate3d(0px, -2px, 0px);
-	-webkit-transform: translate3d(0px, -2px, 0px);
-	-o-transform: translate(0px, -2px);
-	-ms-transform: translate(0px, -2px);
-	transform: translate3d(0px, -2px, 0px);
-	box-shadow: 0 16px 28px 0 rgba(0, 0, 0, 0.22),
-		0 25px 55px 0 rgba(0, 0, 0, 0.21);
+  -moz-transition: all 200ms linear;
+  -webkit-transition: all 200ms linear;
+  -o-transition: all 200ms linear;
+  transition: all 200ms linear;
+  -moz-transform: translate3d(0px, -2px, 0px);
+  -webkit-transform: translate3d(0px, -2px, 0px);
+  -o-transform: translate(0px, -2px);
+  -ms-transform: translate(0px, -2px);
+  transform: translate3d(0px, -2px, 0px);
+  box-shadow: 0 16px 28px 0 rgba(0, 0, 0, 0.22),
+    0 25px 55px 0 rgba(0, 0, 0, 0.21);
 }
-
-
 
 /* profile component */
 .profile-view {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	background: url('https://wallpaperaccess.com/full/5463459.jpg') no-repeat;
-	background-position: center;
-	background-size: cover;
-	padding-top: 10rem;
-	padding-bottom: 10rem;
-	color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: url('https://wallpaperaccess.com/full/5463459.jpg') no-repeat;
+  background-position: center;
+  background-size: cover;
+  padding-top: 10rem;
+  padding-bottom: 10rem;
+  color: #fff;
 }
 
 .profile-info {
-	width: 75%;
-	text-align: center;
-	background-color: rgb(230, 163, 39, 0.7);
+  width: 75%;
+  text-align: center;
+  background-color: rgb(230, 163, 39, 0.7);
 }
 
 table,
 th,
 td {
-	/* background-color: azure; */
-	border-collapse: collapse;
-	border: 1px solid black;
-	text-align: center;
-	margin-left: auto;
-	margin-right: auto;
-	color: black;
-	width: 65%;
+  /* background-color: azure; */
+  border-collapse: collapse;
+  border: 1px solid black;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  color: black;
+  width: 65%;
 }
 
 tfoot,
 thead {
-	background-color: #ddcd72;
+  background-color: #ddcd72;
 }
 
 tr:nth-child(even) {
-	background-color: #ddcd72;
+  background-color: #ddcd72;
 }
 
 tr:nth-child(odd) {
-	background-color: #fafafa;
+  background-color: #fafafa;
 }
 
 form {
-	color: black;
-	text-align: center;
+  color: black;
+  text-align: center;
 }
 
 /* both cart components */
 .shopping-cart {
-	/* display: flex; */
-	align-items: center;
-	justify-content: center;
-	background: url('https://www.teahub.io/photos/full/61-615051_2400x1200-irish-bar-by-murataral-irish-bar-by.jpg')
-		repeat;
-	background-position: center;
-	background-size: cover;
-	padding-top: 10rem;
-	/* padding-bottom: 10rem; */
-	color: #fff;
-	flex-direction: column;
+  /* display: flex; */
+  align-items: center;
+  justify-content: center;
+  background: url('https://www.teahub.io/photos/full/61-615051_2400x1200-irish-bar-by-murataral-irish-bar-by.jpg')
+    repeat;
+  background-position: center;
+  background-size: cover;
+  padding-top: 10rem;
+  /* padding-bottom: 10rem; */
+  color: #fff;
+  flex-direction: column;
 }
 
 input {
-	text-align: center;
+  text-align: center;
 }
 
 label {
-	color: white;
+  color: white;
 }
 
 #form-background {
-	background-color: black;
+  background-color: black;
 }
 
 .edit-product-admins {
+
 	/* display: flex; */
 	align-items: center;
 	justify-content: center;
@@ -749,68 +745,131 @@ label {
 	padding-bottom: 10rem;
 	color: #fff;
 	flex-direction: column;
+
 }
 
 /* both cart components */
 .all-users {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	flex-direction: column;
-	background: url('https://mocah.org/uploads/posts/562740-background-blur.jpg')
-		no-repeat;
-	background-position: center;
-	background-size: cover;
-	padding-top: 10rem;
-	padding-bottom: 10rem;
-	color: #fff;
-	text-align: center;
-	flex-wrap: wrap;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background: url('https://mocah.org/uploads/posts/562740-background-blur.jpg')
+    no-repeat;
+  background-position: center;
+  background-size: cover;
+  padding-top: 10rem;
+  padding-bottom: 10rem;
+  color: #fff;
+  text-align: center;
+  flex-wrap: wrap;
 }
 
 .single-user {
-	width: 75%;
-	margin: 10px;
-	text-align: center;
-	background-color: white;
-	color: black;
+  width: 75%;
+  margin: 10px;
+  text-align: center;
+  background-color: white;
+  color: black;
 }
 
 .users-box {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	flex-direction: column;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 }
 
 .add-user-form {
-	width: 95%;
-	margin: 10px;
-	text-align: center;
-	background: url('https://wallpaperaccess.com/full/696705.jpg')
-		no-repeat;
-	color: black;
+  width: 95%;
+  margin: 10px;
+  text-align: center;
+  background: url('https://wallpaperaccess.com/full/696705.jpg') no-repeat;
+  color: black;
 }
 
 .all-users-orders {
-	color: rgb(252, 247, 247);
+  color: rgb(252, 247, 247);
 }
 
 .single-product-view {
-	display: flex;
-	align-content: center;
-	justify-content: center;
-	flex-direction: column;
-	background: url('https://p0.piqsels.com/preview/902/404/8/blurred-background-close-up-colors-dark.jpg') repeat;
-
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  flex-direction: column;
+  background: url('https://p0.piqsels.com/preview/902/404/8/blurred-background-close-up-colors-dark.jpg')
+    repeat;
 }
 
 .single-product-border {
-	width: 70%;
-	margin: 15.5%;
-	margin-bottom: 0pt;
-	margin-top: 0pt;
-	padding: 20pt;
-	background-color: rgba(255, 255, 255, 0.7);
+  width: 70%;
+  margin: 15.5%;
+  margin-bottom: 0pt;
+  margin-top: 0pt;
+  padding: 20pt;
+  background-color: rgba(255, 255, 255, 0.7);
 }
 
+#loggin {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: url('https://kpattorney.com/wp-content/uploads/2020/02/Dram-Shop-Laws-explained-by-kanner-and-pintaluga-scaled.jpeg')
+    no-repeat;
+  background-position: center;
+  background-size: cover;
+  padding-top: 10rem;
+  padding-bottom: 10rem;
+}
+
+.view-more-product-info-button {
+  background-color: rgb(19, 88, 179);
+  margin: 10px;
+  color: beige;
+}
+
+.view-more-product-info-button:hover {
+  background-color: rgb(19, 88, 179);
+  filter: brightness(125%);
+  margin: 10px;
+  color: beige;
+}
+
+.back-to-all-products-link {
+  margin-top: 40px;
+}
+
+.single-user-info-div {
+  border: 2px solid rgb(218, 214, 214);
+  margin: auto;
+  width: 50%;
+}
+
+#edit-user-restricted-button {
+  background-color: rgb(179, 51, 19);
+  margin: auto;
+  width: 50%;
+  margin: 30px;
+  color: beige;
+}
+
+#edit-user-restricted-button:hover {
+  background-color: rgb(179, 51, 19);
+  filter: brightness(125%);
+  margin: auto;
+  width: 50%;
+  margin: 30px;
+  color: beige;
+}
+
+#user-view-by-admin-order-div {
+  margin-bottom: 20px;
+  border: 2px solid rgb(218, 214, 214);
+  margin: auto;
+  width: 50%;
+}
+
+.content img {
+  width: 100%;
+  height: 600px;
+}

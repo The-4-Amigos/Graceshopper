@@ -1,22 +1,20 @@
-
-import React, { Component, Fragment } from "react";
-import { connect } from "react-redux";
-import { withRouter, Route, Switch, Redirect } from "react-router-dom";
-import AllProducts from "./components/AllProducts";
-import { Login, Signup } from "./components/AuthForm";
-import Profile from "./components/Profile";
-import SingleProduct from "./components/SingleProduct";
-import { me } from "./store";
-import GuestCart from "./components/Cart";
-import UserCart from "./components/UserCart";
-import AllUsersAdminView from "./components/AllUsersAdminView";
-import SingleUser from "./components/SingleUser";
-import { HomePage } from "./components/HomePage";
-import swal from "sweetalert";
+import React, { Component, Fragment } from 'react';
+import { connect } from 'react-redux';
+import { withRouter, Route, Switch, Redirect } from 'react-router-dom';
+import AllProducts from './components/AllProducts';
+import { Login, Signup } from './components/AuthForm';
+import Profile from './components/Profile';
+import SingleProduct from './components/SingleProduct';
+import { me } from './store';
+import GuestCart from './components/Cart';
+import UserCart from './components/UserCart';
+import AllUsersAdminView from './components/AllUsersAdminView';
+import SingleUser from './components/SingleUser';
+import { HomePage } from './components/HomePage';
+import swal from 'sweetalert';
 import AllProductsAdminView from './components/AllProductsAdminView';
 import SingleProductAdminView from './components/SingleProductAdminView';
-import CheckoutForm from "./components/checkoutForm";
-
+import CheckoutForm from './components/checkoutForm';
 
 /**
  * COMPONENT
@@ -30,33 +28,39 @@ class Routes extends Component {
     const { isLoggedIn, isAdmin } = this.props;
     return (
       <Switch>
-      <Route path='/checkout' component={CheckoutForm}/>
-          <Route exact path="/" component={HomePage} />
-          <Route exact path="/products" component={AllProducts} />
-          <Route exact path="/cart" component={GuestCart} />
-          <Route path="/products/:productId" component={SingleProduct} />
-          
-          {isLoggedIn ? (
-            <Switch>
-              <Route path="/user/:userId" component={Profile} />
-              <Route exact path="/cart/:userId" component={UserCart} />
-              {isLoggedIn && isAdmin && (
-                <Switch>
-                  <Route exact path="/users/:userId" component={SingleUser} />
-                  <Route exact path="/users" component={AllUsersAdminView} />
-                  <Route exact path="/adminProducts" component={AllProductsAdminView} />
-                  <Route path="/adminProducts/:productAdminId" component={SingleProductAdminView} />
-                </Switch>
-              )}
-              <Redirect to="/home" />
-            </Switch>
-          ) : (
-            <Switch>
-              <Route path="/login" component={Login} />
-              <Route path="/signup" component={Signup} />
-            </Switch>
-          )}
-       
+        <Route path="/checkout" component={CheckoutForm} />
+        <Route exact path="/" component={HomePage} />
+        <Route exact path="/products" component={AllProducts} />
+        <Route exact path="/cart" component={GuestCart} />
+        <Route path="/products/:productId" component={SingleProduct} />
+
+        {isLoggedIn ? (
+          <Switch>
+            <Route path="/user/:userId" component={Profile} />
+            <Route exact path="/cart/:userId" component={UserCart} />
+            {isLoggedIn && isAdmin && (
+              <Switch>
+                <Route exact path="/users/:userId" component={SingleUser} />
+                <Route exact path="/users" component={AllUsersAdminView} />
+                <Route
+                  exact
+                  path="/adminProducts"
+                  component={AllProductsAdminView}
+                />
+                <Route
+                  path="/adminProducts/:productAdminId"
+                  component={SingleProductAdminView}
+                />
+              </Switch>
+            )}
+            <Redirect to="/home" />
+          </Switch>
+        ) : (
+          <Switch>
+            <Route path="/login" component={Login} />
+            <Route path="/signup" component={Signup} />
+          </Switch>
+        )}
       </Switch>
     );
   }
