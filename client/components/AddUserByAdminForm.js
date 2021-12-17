@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 import { addUser } from '../store/users'
 
 
+
 class AddUserByAdminForm extends React.Component {
     constructor () {
         super()
@@ -18,7 +19,12 @@ class AddUserByAdminForm extends React.Component {
         }
         this.handleChange = this.handleChange.bind(this)
         this.handleSubmit = this.handleSubmit.bind(this)
+        this.handleSelectChange = this.handleSelectChange.bind(this)
     }
+
+    handleSelectChange(event) {
+		this.setState({ isAdmin: event.target.value });
+	}
 
 
     handleChange (event) {
@@ -72,10 +78,15 @@ class AddUserByAdminForm extends React.Component {
                                 <label htmlFor="dob">Add DOB: </label>
                                 <input name= "dob" onChange={handleChange} value={dob} type="date" />
                             </div>
-                            <div>
-                                <label htmlFor="isAdmin">Is Admin? </label>
-                                <input name= "isAdmin" onChange={handleChange} value={isAdmin} />
-                            </div>
+                            <label htmlFor="isAdmin">Is Admin? </label>
+                                <select
+                                    onChange={this.handleSelectChange}
+                                    name="isAdmin"
+                                    value={isAdmin}
+                                >
+                                    <option value="true">True</option>
+                                    <option value="false">False</option>
+                                </select>
                             <div>
                                 <button type="submit">Submit</button>
                             </div>

@@ -38,18 +38,18 @@ router.get('/byorder/:orderId', async (req, res, next) => {
 	}
 });
 
-router.post('/:userId', async (req, res, next) => {
-	Orders.findOrCreate({
+
+router.post('/', async (req, res, next) => {
+	Orders.create({
 		where: {
-			userId: req.params.userId,
-			fulfilled: false,
+			fulfilled: true,
 		},
 	})
 		.spread((order) => {
 			const { orderItem } = req.body;
-			Product.findOrCreate({
+			ProductOrders.findOrCreate({
 				where: {
-					title: orderItem.title,
+					name: orderItem.name,
 					orderId: +order.id,
 					productId: orderItem.productId,
 					price: orderItem.price,

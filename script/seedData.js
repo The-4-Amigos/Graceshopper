@@ -32,7 +32,6 @@ let wineBottleImages = [
   'https://images.unsplash.com/photo-1557682204-e53b55fd750c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8d2luZSUyMGJvdHRsZXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=800&q=60',
   'https://images.unsplash.com/photo-1584916201218-f4242ceb4809?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8d2luZSUyMGJvdHRsZXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=800&q=60',
   'https://images.unsplash.com/photo-1610631787813-9eeb1a2386cc?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8N3x8d2luZSUyMGJvdHRsZXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=800&q=60',
-  'https://www.kdwine.com/thumb/thumbme.html?src=/images/sites/kdwine/labels/flavium-crianza-bierzo_1.jpg&w=160&h=160',
   'https://assets.architecturaldigest.in/photos/6008436388d5cb634511ebbf/master/w_1600%2Cc_limit/fratelli.jpg',
   'https://i.pinimg.com/originals/20/6b/b2/206bb21b63bf833e57231aff6b422810.jpg',
   'https://images.pexels.com/photos/2912108/pexels-photo-2912108.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500',
@@ -61,8 +60,8 @@ for (let i = 1; i <= 50; i++) {
   let name = faker.name.lastName();
   let ABV = faker.datatype.number({ min: 0, max: 85 });
   let stockAmount = faker.datatype.number({ min: 0, max: 1500 });
-  let price = faker.datatype.number({ min: 40, max: 120 });
-  let description = faker.lorem.words(12);
+  let price = faker.datatype.number({ min: 20, max: 120 });
+  let description = faker.lorem.sentences(3);
   let alcoholType = faker.random.arrayElement([
     'tequila',
     'rum',

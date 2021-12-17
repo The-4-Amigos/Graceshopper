@@ -18,8 +18,13 @@ class AddProductByAdminForm extends React.Component {
         }
         this.handleChange = this.handleChange.bind(this)
         this.handleSubmit = this.handleSubmit.bind(this)
+        this.handleSelectChange = this.handleSelectChange.bind(this)
     }
 
+
+    handleSelectChange(event) {
+		this.setState({ alcoholType: event.target.value });
+	}
 
     handleChange (event) {
         this.setState({
@@ -52,7 +57,7 @@ class AddProductByAdminForm extends React.Component {
                     <button className="add-new-user-button" type="submit" onClick={() => this.setState({showForm: true})} >Add New Product</button>
 
                     {this.state.showForm && (
-                        <form onSubmit={handleSubmit}>
+                        <form className="edit-product-admins" onSubmit={handleSubmit}>
                             <div>
                                 <label htmlFor="name">Add Name: </label>
                                 <input name= "name" onChange={handleChange} value={name} />
@@ -72,8 +77,17 @@ class AddProductByAdminForm extends React.Component {
                                 <label htmlFor="description">Add Description: </label>
                                 <input name= "description" onChange={handleChange} value={description} type="text" />
 
-                                <label htmlFor="alcoholType">Add Category: (tequila, rum, whiskey or wine) </label>
-                                <input name= "alcoholType" onChange={handleChange} value={alcoholType} />
+                                <label htmlFor="alcoholType">Choose a Category:</label>
+                                <select
+                                    onChange={this.handleSelectChange}
+                                    name="alcoholType"
+                                    value={alcoholType}
+                                >
+                                    <option value="tequila">tequila</option>
+                                    <option value="rum">rum</option>
+                                    <option value="whiskey">whiskey</option>
+                                    <option value="wine">wine</option>
+                                </select>
                             </div>
                                 
                             <div>

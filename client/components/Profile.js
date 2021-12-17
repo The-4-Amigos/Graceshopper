@@ -23,9 +23,8 @@ class Profile extends React.Component {
 		// console.log('This is req:', req.orders);
 		return (
 			<div>
-				<div>
-					<h3>{currentUser.fullName}</h3>
-					<div>
+				<div className="profile-view">
+					<div className="profile-info">
 						<h2>My Profile</h2>
 						<h3>Name: {fullName}</h3>
 						<p>Email: {email}</p>

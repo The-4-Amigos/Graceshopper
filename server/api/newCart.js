@@ -35,7 +35,7 @@ router.post('/:id', async (req, res, next) => {
 				fulfilled: false,
 			});
 
-			productOrder = await ProductOrders.findOrCreate({
+			productOrder = await ProductOrders.create({
 				where: {
 					orderId: newOrder.id,
 					productId: req.body.productId,

@@ -4,14 +4,9 @@ const db = require('../db')
 const ProductOrders = db.define('productOrders', {
   orderId: {
     type: Sequelize.INTEGER,
-    // allowNull: false,
   },
   productId: {
     type: Sequelize.INTEGER,
-  },
-  price: {
-    type: Sequelize.INTEGER,
-    defaultValue: null
   },
   quantity: {
     type: Sequelize.INTEGER,

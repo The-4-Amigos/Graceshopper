@@ -26,40 +26,41 @@ export class SingleProduct extends React.Component {
 		this.props.getSingleProduct(this.props.match.params.productId);
 	}
 
-  render() {
-    const { singleProduct } = this.props;
-    return (
-      <div>
-        <div id='box'>
-          <div className="single-product-border">
-            <h1>{singleProduct.name}</h1>
-            <img className="products-image-size" src={singleProduct.image} />
-            <h1 className="price">Price: ${singleProduct.price}</h1>
-            <p>Description: {singleProduct.description}</p>
-            <h3>ABV: {singleProduct.ABV}%</h3>
-            <h3>Category: {singleProduct.alcoholType}</h3>
-            <div>
-              {singleProduct.stockAmount > 0 ? (
-                <h1>In stock</h1>
-              ) : (
-                <h1>Out of stock</h1>
-              )}
-            </div>
-							<button
-								onClick={() => {
-									this.handleClick(singleProduct);
-								}}
-							>
-								<h1>add to cart</h1>
-							</button>
-          </div>
-	<div className="back-to-all-products-link">
-							<Link to={'/products'}>Back to All Products</Link>
+	render() {
+		const { singleProduct } = this.props;
+		return (
+			<div id="box">
+				<div className="single-product-view">
+					<div className="single-product-border">
+						<h1>{singleProduct.name}</h1>
+						<img className="products-image-size" src={singleProduct.image} />
+						<h1 className="price">Price: ${singleProduct.price}</h1>
+						<p> {singleProduct.description}</p>
+						<h3>Alcohol By Volume: {singleProduct.ABV}%</h3>
+						<h3>Alcohol Type: {singleProduct.alcoholType}</h3>
+						<div>
+							{singleProduct.stockAmount > 0 ? (
+								<h1>In stock</h1>
+							) : (
+								<h1>Out of stock</h1>
+							)}
 						</div>
-        </div>
-      </div>
-    );
-  }
+						<button
+							disabled={singleProduct.stockAmount < 1}
+							onClick={() => {
+								this.handleClick(singleProduct);
+							}}
+						>
+							<h1>add to cart</h1>
+						</button>
+					</div>
+					<div className="back-to-all-products-link">
+						<Link to={'/products'}>Back to All Products</Link>
+					</div>
+				</div>
+			</div>
+		);
+	}
 }
 
 const mapState = (state) => {

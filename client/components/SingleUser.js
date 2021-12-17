@@ -27,9 +27,9 @@ class SingleUser extends React.Component {
     render () {
         const { user }= this.props
         return (
-            <div className = 'singleUser'>
+            <div className = 'all-users'>
                 <h1>User Info:</h1>
-                <div className="single-user-info-div">
+                <div className="single-user">
                     <div>
                         <h2>Full Name: {user.fullName}</h2>
                     </div>
@@ -46,9 +46,9 @@ class SingleUser extends React.Component {
                     <button id='edit-user-restricted-button' onClick={() => this.handleEditButtonClick()} className="edit-button" type="submit">Edit This User</button>
                 </div>
                 <div>
-                    <h3>All User's Orders:</h3>
+                    <h1>All User's Orders:</h1>
                     {(user.orders === undefined || user.orders.length < 1) ? <h1>This User Has No Orders :(</h1> :
-                    <div>{user.orders.map(order =>
+                    <div className="all-users-orders">{user.orders.map(order =>
                     <div key={order.id} id='user-view-by-admin-order-div'>
                         <h2>Order Id: {order.id}</h2>
                         <h2>Fulfilled: {String(order.fulfilled)}</h2>

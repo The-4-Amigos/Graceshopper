@@ -16,6 +16,7 @@ class EditProductByAdmin extends React.Component {
        }
        this.handleChange = this.handleChange.bind(this)
        this.handleSubmit = this.handleSubmit.bind(this)
+       this.handleSelectChange = this.handleSelectChange.bind(this)
    }
  
    componentDidUpdate (prevProps) {
@@ -32,6 +33,10 @@ class EditProductByAdmin extends React.Component {
        }
    }
  
+   handleSelectChange(event) {
+    this.setState({ alcoholType: event.target.value });
+   }
+
    handleChange (event) {
        this.setState({
            [event.target.name]: event.target.value
@@ -47,7 +52,7 @@ class EditProductByAdmin extends React.Component {
        const { name, image, ABV, stockAmount, price, description, alcoholType } = this.state
        const { handleSubmit, handleChange, } = this
        return (
-           <div className="single-user-info">
+           <div className="edit-product-admins" >
                <h3>Enter Changes Below Then Save Changes</h3>
                <form onSubmit={handleSubmit}>
                    <div>
@@ -68,13 +73,23 @@ class EditProductByAdmin extends React.Component {
  
                        <label htmlFor="description">Edit Description: </label>
                        <input name= "description" onChange={handleChange} value={description} />
- 
-                       <label htmlFor="alcoholType">Edit Category: </label>
-                       <input name= "alcoholType" onChange={handleChange} value={alcoholType} />
-                       </div>                       
-                   <div>
-                       <button type="submit">Save Changes</button>
-                   </div>
+
+                       <label htmlFor="alcoholType">Choose a Category:</label>
+                                <select
+                                    onChange={this.handleSelectChange}
+                                    name="alcoholType"
+                                    value={alcoholType}
+                                >
+                                    <option value="tequila">tequila</option>
+                                    <option value="rum">rum</option>
+                                    <option value="whiskey">whiskey</option>
+                                    <option value="wine">wine</option>
+                                </select>
+
+                    </div>                       
+                    <div>
+                        <button type="submit">Save Changes</button>
+                    </div>
                </form>
            </div>
        )

@@ -16,13 +16,13 @@
   outline: none;
   border: none;
   text-decoration: none;
-  text-transform: capitalize;
   transition: all 0.2s linear;
 }
 
-/* body {
-  background: rgba(91, 104, 30, 0.913);
-} */
+body {
+  background: rgba(255, 255, 255, 0.913);
+}
+
 section {
   padding: 2rem 9%;
 }
@@ -64,6 +64,10 @@ form div {
   color: rgb(229, 255, 0);
 }
 
+.navbar div {
+  width: 65%;
+}
+
 .navbar Link:hover {
   color: green;
 }
@@ -86,7 +90,6 @@ section {
   background-size: cover;
   padding-top: 17rem;
   padding-bottom: 10rem;
-  background-color: #fff;
 }
 
 /* not sure if needed */
@@ -155,12 +158,9 @@ button:hover {
   background: url('https://p0.piqsels.com/preview/902/404/8/blurred-background-close-up-colors-dark.jpg');
 }
 .product .wrapper {
-  /* padding: 1.7rem; */
   padding-top: 1rem;
   padding-bottom: 25rem;
   display: flex;
-  /* flex: 1 1 1 100%; */
-  /* flex-basis: 100%; */
   flex-wrap: wrap;
   gap: 1rem 1rem 1rem 1rem;
   justify-content: space-between;
@@ -184,10 +184,8 @@ button:hover {
   text-align: center;
   padding: 2rem 1rem 1rem 1rem;
   margin: 0rem 0rem 2rem 1rem;
-  /* outline-offset: groove; */
   outline: var(--outline);
   box-shadow: var(--box-shadow);
-  /* transition: 0.2s linear; */
   justify-content: space-between;
 }
 
@@ -215,23 +213,9 @@ button:hover {
 
 /* cart*/
 .shopping-cart {
-  /* display: flex; */
-  /* align-items: center; */
-  /* justify-content: center; */
-  /* background: url() no-repeat; */
-  /* background-position: center; */
-  /* background-size: cover; */
-
-  /* background: url("https://kpattorney.com/wp-content/uploads/2020/02/Dram-Shop-Laws-explained-by-kanner-and-pintaluga-scaled.jpeg")
-    no-repeat; */
   padding-top: 10rem;
   padding-bottom: 10rem;
 }
-/* .totalLabel{
-  text-align: right;
-  padding-right: 2rem;
-  display: inline-block;
-} */
 
 .cart-box {
   display: flex;
@@ -253,71 +237,12 @@ td img {
 } */
 
 .noItems {
+  /* https://images.unsplash.com/photo-1581775275191-f5f151f0a9dd?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8YmFyJTIwZHJpbmtzfGVufDB8fDB8fA%3D%3D&w=1000&q=80 */
   display: flex;
   justify-content: center;
   padding-top: 17rem;
   padding-bottom: 10rem;
 }
-
-/* .container{
-
-  background: url("https://p0.piqsels.com/preview/902/404/8/blurred-background-close-up-colors-dark.jpg");
-  padding: 8rem ;
-  padding-left: 1rem;
-  box-sizing: border-box;
-  background-position: center;
-  background-size: 80% auto; */
-/* max-width: 1200px;
-  margin: 0 auto; */
-/* } */
-
-/* .container h1{
-  padding: 20px 0;
-}
-
-.productCart{
-  padding-top: 10px 0;
-  display: flex;
-}
-
-.productCart{
-  display: flex;
-  width: 100px;
-  height: 200px;
-  /* overflow: hidden; */
-/* border: 1px solid silver;
-} */
-
-/* .productCart:hover{
-    border: none;
-    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
-    transform: scale(1.01);
-}
-
-.productCart img{
-  display: flex;
-  width: 300px;
-  height: 400px;
-  object-fit: cover;
-}
-
-.productCart img:hover{
-  transform: scale(1.04);
-}
-.product-info{
-  padding: 10rem;
-  width: 100%;
-  position: relative;
-}
-.productNameCart, .product-productPriceCart{
-  margin-bottom: 20px;
-}
-.product-removal-Cart{
-  position: absolute;
-  bottom: 20px;
-  right: 20px;
-  padding: 10px 25px;
-} */
 
 /*single product*/
 #noItems {
@@ -364,7 +289,7 @@ td img {
 }
 .price {
   font-size: 2rem;
-  color: var(--light-color);
+  color: rgb(59, 59, 59);
   padding: 0.5rem 0;
 }
 
@@ -372,165 +297,516 @@ td img {
   padding-top: 7rem 1rem;
 }
 
-/* https://images.unsplash.com/photo-1581775275191-f5f151f0a9dd?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8YmFyJTIwZHJpbmtzfGVufDB8fDB8fA%3D%3D&w=1000&q=80 */
-/* .single-product-border { */
-/* border: 2px solid rgb(218, 214, 214);
-  margin: auto;
-  width: 75%;
-  padding: 15px;
-  margin-bottom: 5%;
-  text-align: center; */
-/* 
-  flex-basis: 50px;
-  box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.94);
-  margin: 20px 20px;
-  padding: 10px;
-  border-radius: 10px;
+#loggin {
   display: flex;
+  align-items: center;
+  justify-content: center;
+  background: url('https://kpattorney.com/wp-content/uploads/2020/02/Dram-Shop-Laws-explained-by-kanner-and-pintaluga-scaled.jpeg')
+    no-repeat;
+  background-position: center;
+  background-size: cover;
+  padding-top: 10rem;
+  padding-bottom: 10rem;
+}
+
+.view-more-product-info-button {
+  background-color: rgb(19, 88, 179);
+  margin: 10px;
+  color: beige;
+}
+
+.view-more-product-info-button {
+  background-color: rgb(19, 88, 179);
+  margin: 10px;
+  color: beige;
+}
+
+.view-more-product-info-button:hover {
+  background-color: rgb(19, 88, 179);
+  filter: brightness(125%);
+  margin: 10px;
+  color: beige;
+}
+
+.back-to-all-products-link {
+  margin-top: 40px;
+}
+
+.single-user-info-div {
+  border: 2px solid rgb(218, 214, 214);
+  margin: auto;
+  width: 50%;
+}
+
+#edit-user-restricted-button {
+  background-color: rgb(179, 51, 19);
+  margin: auto;
+  width: 50%;
+  margin: 30px;
+  color: beige;
+}
+
+#edit-user-restricted-button:hover {
+  background-color: rgb(179, 51, 19);
+  filter: brightness(125%);
+  margin: auto;
+  width: 50%;
+  margin: 30px;
+  color: beige;
+}
+
+#user-view-by-admin-order-div {
+  margin-bottom: 20px;
+  border: 2px solid rgb(218, 214, 214);
+  margin: auto;
+  width: 50%;
+}
+
+/* checkoutForm*/
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  box-sizing: border-box;
+}
+
+.containerFORM {
+  display: flex;
+  flex-direction: column;
+  max-width: 400px;
+  position: absolute;
+  /*     top: 50%; */
+  left: 50%;
+  transform: translate(-50%, 0%);
+  -webkit-transform: translate(-50%, 0%);
+  -ms-transform: translate(-50%, 0%);
+  transition: 1s all ease-in-out;
+  -webkit-transition: 1s all ease-in-out;
+  -moz-transition: 1s all ease-in-out;
+
+  /*FIND WHERE*/
+  width: 100%;
+  /* background-image:url(https://i.imgur.com/3jhku0g.gif);
+    background-size:cover; */
+}
+
+.boxFORM {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  padding-top: 17rem;
+  padding-bottom: 10rem;
+  box-shadow: var(--box-shadow);
+}
+.credit-card-box {
+  width: 400px;
+  height: 280px;
+  background: linear-gradient(135deg, #03a9f4, #1976d2);
+  border-radius: 15px;
+  color: #fff !important;
+  text-shadow: 0 1px 1px hsla(0, 0, 0, 0.3);
+}
+.credit-card-box {
+  width: 400px;
+  height: 280px;
+  background: linear-gradient(135deg, #03a9f4, #1976d2);
+  border-radius: 15px;
+  color: #fff !important;
+  text-shadow: 0 1px 1px hsla(0, 0, 0, 0.3);
+}
+
+.card-panel {
+  padding-bottom: 0px;
+}
+
+#crickets {
+  width: 100px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* checkoutForm*/
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  box-sizing: border-box;
+}
+
+.containerFORM {
+  display: flex;
+  flex-direction: column;
+  max-width: 420px;
+  position: absolute;
+  box-shadow: var(--box-shadow);
+  justify-content: center;
+  background-color: rgb(185, 195, 177);
+  /* border-radius: 20% */
+  /*     top: 50%; */
+  left: 50%;
+  transform: translate(-50%, 0%);
+  -webkit-transform: translate(-50%, 0%);
+  -ms-transform: translate(-50%, 0%);
+  transition: 1s all ease-in-out;
+  -webkit-transition: 1s all ease-in-out;
+  -moz-transition: 1s all ease-in-out;
+
+  /*FIND WHERE*/
+  width: 100%;
+  /* background-image:url(https://i.imgur.com/3jhku0g.gif);
+    background-size:cover; */
+}
+
+.boxFORM {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  padding-top: 5rem;
+  width: -65%;
+  padding-bottom: 10rem;
+  box-shadow: var(--box-shadow);
+  align-content: center;
+}
+
+.table td:nth-child(1) {
+  width: 34px;
+}
+
+table td:nth-child(3) {
+  width: 65px;
+}
+
+.bold {
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.credit-card-box {
+  width: 400px;
+  height: 280px;
+  background: linear-gradient(135deg, #2aa073, #1a8848);
+  border-radius: 15px;
+  color: #fff !important;
+  text-shadow: 0 1px 1px hsla(0, 0, 0, 0.3);
+}
+
+.input-field.cvv,
+.input-field.number,
+.input-field.card-holder,
+.input-field.card-expiration-date {
+  display: inline-block;
+}
+
+.table td:nth-child(1) {
+  width: 34px;
+}
+
+table td:nth-child(3) {
+  width: 65px;
+}
+
+.bold {
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.credit-card-box {
+  width: 400px;
+  height: 280px;
+  background: linear-gradient(135deg, #44e4a6, #209451);
+  border-radius: 15px;
+  color: #fff !important;
+  text-shadow: 0 1px 1px hsla(0, 0, 0, 0.3);
+}
+
+.input-field.cvv {
+  top: -6px;
+  margin-left: 6px !important;
+}
+
+.input-field label {
+  color: #fff;
+  left: 0rem;
+}
+
+.select-wrapper + label {
+  top: -1.8rem;
+}
+
+.select-wrapper span.caret {
+  top: 2px;
+  color: #fff;
+}
+
+.input-card-cvv {
+  width: 30px !important;
+  display: inline-block;
+}
+
+.card-holder {
+  width: 150px !important;
+  margin-right: 10px;
+}
+
+.card-expiration-date {
+  display: inline !important;
+}
+
+.card-expiration-date .select-wrapper,
+.card-expiration-date input {
+  display: inline !important;
+  width: 50px !important;
+}
+
+.card-expiration-date .select-wrapper {
+  margin-right: 5px;
+}
+
+.card-expiration-date ul,
+.card-expiration-date li span {
+  width: 50px !important;
+}
+
+.card-expiration-date .select-wrapper,
+.card-expiration-date input {
+  display: inline !important;
+  width: 50px !important;
+}
+
+.card-expiration-date .select-wrapper {
+  margin-right: 5px;
+}
+
+.card-expiration-date ul,
+.card-expiration-date li span {
+  width: 50px !important;
+}
+
+.logo img {
+  position: relative;
+  top: 0px;
+  left: 290px;
+  width: 60px;
+  filter: invert(1);
+  -moz-filter: invert(1);
+  -webkit-filter: invert(1);
+}
+
+.checkout {
+  margin: 0px;
+}
+
+.btn-large {
+  margin: 10px 0%;
+  width: 100%;
+}
+
+.card-expiration-date .select-wrapper,
+.card-expiration-date input {
+  display: inline !important;
+  width: 50px !important;
+}
+
+.card-expiration-date .select-wrapper {
+  margin-right: 5px;
+}
+
+.card-expiration-date ul,
+.card-expiration-date li span {
+  width: 50px !important;
+}
+
+.logo img {
+  position: relative;
+  top: 0px;
+  left: 290px;
+  width: 60px;
+  filter: invert(1);
+  -moz-filter: invert(1);
+  -webkit-filter: invert(1);
+}
+
+.checkout {
+  margin: 0px;
+}
+
+.animation-element.slide-left.in-view {
+  opacity: 1;
+  -moz-transform: translate3d(0px, 0px, 0px);
+  -webkit-transform: translate3d(0px, 0px, 0px);
+  -o-transform: translate(0px, 0px);
+  -ms-transform: translate(0px, 0px);
+  transform: translate3d(0px, 0px, 0px);
+}
+
+.credit-card-box.animation-element:hover {
+  -moz-transition: all 200ms linear;
+  -webkit-transition: all 200ms linear;
+  -o-transition: all 200ms linear;
+  transition: all 200ms linear;
+  -moz-transform: translate3d(0px, -2px, 0px);
+  -webkit-transform: translate3d(0px, -2px, 0px);
+  -o-transform: translate(0px, -2px);
+  -ms-transform: translate(0px, -2px);
+  transform: translate3d(0px, -2px, 0px);
+  box-shadow: 0 16px 28px 0 rgba(0, 0, 0, 0.22),
+    0 25px 55px 0 rgba(0, 0, 0, 0.21);
+}
+
+/* profile component */
+.profile-view {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: url('https://wallpaperaccess.com/full/5463459.jpg') no-repeat;
+  background-position: center;
+  background-size: cover;
+  padding-top: 10rem;
+  padding-bottom: 10rem;
+  color: #fff;
+}
+
+.profile-info {
+  width: 75%;
+  text-align: center;
+  background-color: rgb(230, 163, 39, 0.7);
+}
+
+table,
+th,
+td {
+  /* background-color: azure; */
+  border-collapse: collapse;
+  border: 1px solid black;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  color: black;
+  width: 65%;
+}
+
+tfoot,
+thead {
+  background-color: #ddcd72;
+}
+
+tr:nth-child(even) {
+  background-color: #ddcd72;
+}
+
+tr:nth-child(odd) {
+  background-color: #fafafa;
+}
+
+form {
+  color: black;
+  text-align: center;
+}
+
+/* both cart components */
+.shopping-cart {
+  /* display: flex; */
+  align-items: center;
+  justify-content: center;
+  background: url('https://www.teahub.io/photos/full/61-615051_2400x1200-irish-bar-by-murataral-irish-bar-by.jpg')
+    repeat;
+  background-position: center;
+  background-size: cover;
+  padding-top: 10rem;
+  /* padding-bottom: 10rem; */
+  color: #fff;
   flex-direction: column;
 }
 
-.products-image-size {
-  height: 300px;
-  width: 300px;
+input {
+  text-align: center;
+}
+
+label {
+  color: white;
+}
+
+#form-background {
+  background-color: black;
+}
+
+.edit-product-admins {
+  /* display: flex; */
+  align-items: center;
+  justify-content: center;
+  width: 500px;
+  background: url('https://st3.depositphotos.com/2777985/i/600/depositphotos_174920152-stock-photo-defocused-city-night-soft-blur.jpg')
+    no-repeat;
+  background-position: center;
+  background-size: 600px 500px;
+  padding-top: 10rem;
+  padding-bottom: 10rem;
+  color: #fff;
+  flex-direction: column;
+}
+
+/* both cart components */
+.all-users {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background: url('https://mocah.org/uploads/posts/562740-background-blur.jpg')
+    no-repeat;
+  background-position: center;
+  background-size: cover;
+  padding-top: 10rem;
+  padding-bottom: 10rem;
+  color: #fff;
+  text-align: center;
+  flex-wrap: wrap;
+}
+
+.single-user {
+  width: 75%;
+  margin: 10px;
+  text-align: center;
+  background-color: white;
+  color: black;
+}
+
+.users-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 }
 
 .add-user-form {
-  margin: auto;
-  width: 50%;
-}
-
-.delete-button {
-  background-color: rgb(202, 38, 38);
+  width: 95%;
   margin: 10px;
-  color: beige;
+  text-align: center;
+  background: url('https://wallpaperaccess.com/full/696705.jpg') no-repeat;
+  color: black;
 }
 
-.delete-button:hover {
-  background-color: rgb(202, 38, 38);
-  filter: brightness(125%);
-  margin: 10px;
-  color: beige;
+.all-users-orders {
+  color: rgb(252, 247, 247);
 }
 
-.view-user-info-button {
-  background-color: rgb(19, 88, 179);
-  margin: 10px;
-  color: beige;
-}
-
-.view-user-info-button:hover {
-  background-color: rgb(19, 88, 179);
-  filter: brightness(125%);
-  margin: 10px;
-  color: beige;
-}
-
-.single-user-info {
-  margin: auto;
-  width: 50%;
-}
-
-.add-new-user-button {
-  background-color: rgb(24, 179, 19);
-  margin: 10px;
-  color: beige;
-}
-
-.add-new-user-button:hover {
-  background-color: rgb(24, 179, 19);
-  filter: brightness(125%);
-  margin: 10px;
-  color: beige;
-}
-
-
-.allProducts {
-  flex-basis: 100%;
+.single-product-view {
   display: flex;
-  flex-wrap: wrap;
+  align-content: center;
   justify-content: center;
+  flex-direction: column;
+  background: url('https://p0.piqsels.com/preview/902/404/8/blurred-background-close-up-colors-dark.jpg')
+    repeat;
 }
 
-
-
-/*home page*/
-/* .welcome {
-  flex-direction: center;
+.single-product-border {
+  width: 70%;
+  margin: 15.5%;
+  margin-bottom: 0pt;
+  margin-top: 0pt;
+  padding: 20pt;
+  background-color: rgba(255, 255, 255, 0.7);
 }
-.infoSection {
-  width: 300px;
-  border: 15px solid green;
-  padding: 50px;
-  margin: 20px;
-}
-.img-description {
-  display: flex;
-  margin-top: 10%;
-}
-
-.container{
-  position: relative;
-  max-width: 81rem;
-  width: 100%;
-  margin: 0 auto;
-  padding: 0 3rem;
-  z-index: 10;
-}
-header .container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color: black;
-  
-}
-
-.logo {
-  display: flex;
-  align-items: center;
-  cursor: pointer;
-}
-.logo img {
-  width: 40px;
-}
-.logo h3 {
-  color: var(--darkTwo);
-  font-size: 1.55rem;
-  line-height: 1.2;
-  font-weight: 700;
-  margin-right: 0.6rem;
-  margin-top: 2rem;
-}
-
-.navLinks ul{
-  display: flex;
-  list-style: none;
-  align-items: center;
-}
-.navLinks Link a{
-color: var(--lightTwo);
-margin-left: 4.5rem;
-display: inline-block;
-}
-.navLinks:hover {
-  color: var(--hoverColor);
-  transform: scale(1.05);
-}
-
-.HomePage-Showcase-Area{
-display: grid;
-grid-template-columns: repeat(2, 1fr);
-align-items: center;
-justify-content: center;
-
-}
-
-.left{
-
-}
-.right{
-
-} */
 
 #loggin {
   display: flex;

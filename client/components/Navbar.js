@@ -1,25 +1,26 @@
-import React from "react";
-import { connect } from "react-redux";
-import { Link } from "react-router-dom";
-import { logout } from "../store";
-import AllUsersAdminView from "./AllUsersAdminView";
-
+import React from 'react';
+import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
+import { logout } from '../store';
+import AllUsersAdminView from './AllUsersAdminView';
+let total = 0;
 const Navbar = ({
-  handleClick,
-  isLoggedIn,
-  isAdmin,
-  currentUser,
-  guestCart,
-  cart,
+	handleClick,
+	isLoggedIn,
+	isAdmin,
+	currentUser,
+	guestCart,
+	cart,
 }) => (
-
 	<div>
 		<h1>Fullstack Spirits</h1>
-		<nav >
+		<nav className="navbar">
 			{isLoggedIn && isAdmin && <Link to="/users">View All Users</Link>}
-			{isLoggedIn && isAdmin && <Link to="/adminProducts">View All Products</Link>}
+			{isLoggedIn && isAdmin && (
+				<Link to="/adminProducts">View All Products</Link>
+			)}
 			{isLoggedIn ? (
-				<div className="navbar">
+				<div>
 					{/* The navbar will show these links after you log in */}
 					<Link to={`/user/${currentUser.id}`}>{currentUser.username}</Link>
 					<a href="#" onClick={handleClick}>
@@ -32,11 +33,18 @@ const Navbar = ({
 							width="50"
 							height="40"
 						/>
-						<span>Cart</span>
+
+						<span>
+							{cart.products.reduce(
+								(total, { productOrders: { quantity } }) =>
+									total + Number(quantity),
+								0
+							)}
+						</span>
 					</Link>
 				</div>
 			) : (
-				<div className="navbar">
+				<div>
 					{/* The navbar will show these links before you log in */}
 					<Link to="/login"> Login </Link>
 					<Link to="/signup"> Sign Up </Link>
@@ -47,8 +55,13 @@ const Navbar = ({
 							width="50"
 							height="40"
 						/>
-						 <span className="number">{guestCart.cartItems.reduce((total, itemQty)=>total + Number(itemQty.qty), 0)}</span>
-          </Link>
+						<span className="number">
+							{guestCart.cartItems.reduce(
+								(total, itemQty) => total + Number(itemQty.qty),
+								0
+							)}
+						</span>
+					</Link>
 				</div>
 			)}
 		</nav>
@@ -61,21 +74,21 @@ const Navbar = ({
  */
 
 const mapState = (state) => {
-  return {
-    isLoggedIn: !!state.auth.id,
-    isAdmin: !!state.auth.isAdmin,
-    currentUser: state.currentUser,
-    guestCart: state.guestCart,
-    cart: state.cart,
-  };
+	return {
+		isLoggedIn: !!state.auth.id,
+		isAdmin: !!state.auth.isAdmin,
+		currentUser: state.currentUser,
+		guestCart: state.guestCart,
+		cart: state.cart,
+	};
 };
 
 const mapDispatch = (dispatch) => {
-  return {
-    handleClick() {
-      dispatch(logout());
-    },
-  };
+	return {
+		handleClick() {
+			dispatch(logout());
+		},
+	};
 };
 
 export default connect(mapState, mapDispatch)(Navbar);

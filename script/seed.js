@@ -34,6 +34,59 @@ async function seed() {
 		},
 	];
 
+	const testUsers = [
+		{
+			username: 'Christina',
+			fullName: 'Christina D',
+			isAdmin: 'false',
+			password: 'password123',
+			dob: '1999-04-01',
+			email: 'fsachristina@aol.com',
+		},
+		{
+			username: 'Janelly',
+			fullName: 'Janelly C',
+			isAdmin: 'false',
+			password: 'password123',
+			dob: '2000-05-11',
+			email: 'fsajanelly@aol.com',
+		},
+	]
+
+	const outOfStockProducts = [
+		{
+			name: 'James',
+			ABV: 34,
+			stockAmount: 0,
+			price: 44,
+			description: 'this item is out of stock',
+			alcoholType: 'tequila',
+			image: 'https://c1.wallpaperflare.com/preview/486/159/708/tequila-bottle-glass-tequila-bottle.jpg'
+		},
+		{
+			name: 'Smith',
+			ABV: 45,
+			stockAmount: 0,
+			price: 25,
+			description: 'this item is out of stock',
+			alcoholType: 'rum',
+			image: 'https://images.unsplash.com/photo-1515777714766-d662e374bdd4?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OXx8cnVtJTIwYm90dGxlfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60',
+
+		},
+	]
+
+	await Promise.all(
+		outOfStockProducts.map((outOfStockProduct) => {
+			return Product.create(outOfStockProduct);
+		})
+	);
+
+	await Promise.all(
+		testUsers.map((testUser) => {
+			return User.create(testUser);
+		})
+	);
+
 	await Promise.all(
 		admins.map((admin) => {
 			return User.create(admin);
