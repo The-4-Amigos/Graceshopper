@@ -732,18 +732,20 @@ label {
 }
 
 .edit-product-admins {
-  /* display: flex; */
-  align-items: center;
-  justify-content: center;
-  width: 500px;
-  background: url('https://st3.depositphotos.com/2777985/i/600/depositphotos_174920152-stock-photo-defocused-city-night-soft-blur.jpg')
-    no-repeat;
-  background-position: center;
-  background-size: 600px 500px;
-  padding-top: 10rem;
-  padding-bottom: 10rem;
-  color: #fff;
-  flex-direction: column;
+
+	/* display: flex; */
+	align-items: center;
+	justify-content: center;
+	width: 500px; 
+	background: url('https://st3.depositphotos.com/2777985/i/600/depositphotos_174920152-stock-photo-defocused-city-night-soft-blur.jpg')
+		no-repeat;
+	background-position: center;
+	background-size: 600px 500px;
+	padding-top: 10rem;
+	padding-bottom: 10rem;
+	color: #fff;
+	flex-direction: column;
+
 }
 
 /* both cart components */
